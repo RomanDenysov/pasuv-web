@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+import Wrapper from '../layouts/Wrapper.astro';
+import { textData } from '../lib/text-data';
+---
+
+<Layout title="Welcome to Astro.">
+	<section class="hero">
+			<img src="/pasuv-video-bg.jpg" alt="pasuv stavby video" class="hero-bg-img">
+			<div class="hero-content">
+				<h1>{textData.homepage.hero.title}</h1>
+				<p>
+					{textData.homepage.hero.content}
+				</p>
+				<Button body={textData.homepage.hero.button.toUpperCase()} size={'large'}/>
+					
+			</div>
+	</section>
+	<Wrapper>
+		<section class="container">
+
+			<Card title='' body='' href=''/>
+			<div class="divider">
+				<span class="sub"></span>
+				<span class="line"/>
+			</div>
+			<div class="divider">
+				<span class="sub"></span>
+				<span class="line"/>
+			</div>
+			<div class="divider">
+				<span class="sub"></span>
+				<span class="line"/>
+			</div>
+			
+		</section>
+	</Wrapper>
+</Layout>
+
+<style>
+	.hero{
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		text-align: center;
+	}
+	.hero-bg-img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		object-fit: cover;
+		object-position: center;
+		z-index: 0;
+		
+		filter: brightness(0.32);
+	}
+	.hero-content {
+		margin: auto;
+		padding: 2rem;
+		max-width: 1440px;
+		width: 100%;
+		color: white;
+		display: flex;
+		align-items: flex-start;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: 1rem;
+		text-align: start;
+		z-index: 2;
+	}
+	.hero-content p{
+		font-size: 1rem;
+		line-height: 32px;
+		font-weight: 400;
+		margin-bottom: 1rem;
+		max-width: 880px;
+		width: 100%;
+	}
+	.hero-content h1 {
+		font-size: 60px;
+		line-height: 72px;
+		font-weight: 400;
+		max-width: 880px;
+		width: 100%;
+	}
+	.container {
+		margin-top: 140px;
+		margin-bottom: 270px;
+		width: 100%;
+		height: 100%;
+	}
+</style>

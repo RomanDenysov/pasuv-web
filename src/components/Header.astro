@@ -1,0 +1,112 @@
+---
+import Button from "./Button.astro";
+---
+    <header class="header">
+        <div class="left-box">
+            <a href="/">
+                <img src="/pasuv-logo.svg" alt="Logo" />
+            </a>
+            <div class="lang-box">
+                <img src="/lang-select.svg" alt="Language" />
+                <select name="lang" id="lang" class="lang-select">
+                    <option value="en" class="lang-item">English</option>
+                    <option value="de" class="lang-item">German</option>
+                    <option value="sk" class="lang-item">Slovak</option>
+                </select>
+            </div>
+        </div>
+        
+        <nav class="right-box">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+            <Button body="Kontaktujte nás" size={'small'}/>
+        </nav>
+        
+    </header>
+<style>
+    .header{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1440px;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        align-items: center;
+        padding: 2rem;
+        max-height: 4rem;
+        z-index: 100;
+    }
+    .left-box{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+    .lang-box {
+        display: flex;
+        align-items: center;
+    }
+    .lang-select{
+        --webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--gray-neutral);
+        cursor: pointer;
+        
+    }
+    .lang-select:focus{
+        outline: none;
+    }
+    .lang-select:active {
+        outline: none;
+    }
+    .lang-select option{
+        background-color: black;
+        color: var(--gray-neutral);
+        margin-top: 5px;
+        border: none;
+    }
+
+
+
+
+    .right-box{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+    .navbar{
+        text-decoration: none;
+        list-style: none;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+    .navbar li{
+        display: flex;
+        align-items: center;
+    }
+    .navbar li a{
+        text-decoration: none;
+        list-style: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+    
+</style>

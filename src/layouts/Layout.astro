@@ -1,0 +1,71 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content=`${description}` />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- <Header/> -->
+		<main>
+			<slot />
+		</main>
+		<!-- <Footer/> -->
+	</body>
+</html>
+<style is:global>
+	:root {
+		--green: #93bf3e;
+		--gray-lightest: #ebebeb;
+		--gray-light: #cccccc;
+		--gray-neutral: #a3a3a3;
+		--gray-dark: #858585;
+		--gray-darkest: #5c5c5c;
+	}
+	html {
+		font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+		font-size: 24px;
+		background: #fff;
+		background-size: 224px;
+		color: black;
+	}
+	*,
+	body {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+	}
+	main {
+		position: relative;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>

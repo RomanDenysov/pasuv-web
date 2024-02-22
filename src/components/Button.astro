@@ -1,0 +1,148 @@
+---
+interface Props {
+	body: string;
+	href?: string;
+    external?: boolean;
+    size?: 'small' | 'medium' | 'large' | null;
+}
+
+
+const { href, body, external, size } = Astro.props;
+
+const buttonSize = `button ${size}`;
+
+---
+
+{href ? (
+    external ? (
+        <a href={href} rel="noopener noreferrer" target="_blank" class="link">
+            <button class={buttonSize}>
+                {body}
+                <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M68 20L19 69" stroke="white" stroke-width="8"/>
+            <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
+        </svg>
+            </button>
+        </a>)  : (
+        <a href={href} class="link">
+            <button class={buttonSize}>
+                {body}
+                <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M68 20L19 69" stroke="white" stroke-width="8"/>
+            <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
+        </svg>
+            </button>
+        </a>)
+        ) : (
+    <button class={buttonSize}>
+        {body}
+        <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M68 20L19 69" stroke="white" stroke-width="8"/>
+            <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
+        </svg>
+
+    </button>
+)}
+
+<style>
+	.button {
+        align-self: center;
+        font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+
+        text-decoration: none;
+        height: 78px;
+        width: 337px;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-weight: 500;
+		
+        font-size: 20px;
+        line-height: 28px;
+        color: white;
+
+        transition: all 0.5s 0.1s ease-in-out;
+        cursor: pointer;
+        position: relative;
+	}
+    .button.small {
+        width: 180px; /* Пример маленького размера */
+        height: 50px;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 6px;
+        z-index: 1;
+    }
+    .button.small:hover{
+        color: black;
+    }
+    .button.small svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .button.medium {
+        width: 200px; /* Пример среднего размера */
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .button.large {
+        align-self: self-start;
+        width: 340px; /* Пример большого размера */
+        height: 80px;
+        font-size: 20px;
+    }
+    .button.large svg {
+        width: 24px;
+        height: 24px;
+    }
+    path {
+        stroke-width: 8;
+    }
+    .link {
+        text-decoration: none;
+    }
+    .button svg {
+        transition: all 0.3s 0.4s ease-in-out;
+    }
+    .button svg path {
+        stroke: white;
+    }
+    .button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0; 
+        left: 0;
+        margin: auto;
+        clip-path: circle(0% at 50% 50%);
+        transition: all 0.5s 0.1s ease-in-out;
+        border-radius: 38px;
+        background-color: white;
+        z-index: -1;
+        border: none;
+    }
+    .button:is(:hover, :focus-within) {
+		color: black;
+	}
+    .button:hover::before {
+        clip-path: circle(100% at 50% 50%);
+    }
+    .button:is(:hover, :focus-within) svg {
+        transform: rotate(45deg);
+    }
+    .button:is(:hover, :focus-within) svg path {
+        stroke: black;
+    }
+	@media screen and (min-width: 768px){
+        
+    }
+</style>
