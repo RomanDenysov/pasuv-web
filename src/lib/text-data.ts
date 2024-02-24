@@ -10,7 +10,7 @@ export const textData = {
 			content:
 				"Už od roku 2013 spolupracujeme na rôznych stavebných projektoch. Špecializujeme sa na priemyselnú aj bytovú výstavbu, stavbu hotelov, škôl a komerčných objektov.",
 			info: "Elektrikári, murári, vodoinštalatéri, stavební pracovníci a ďalšie profesie",
-			img: "construction.jpg",
+			img: "hero-image-homepage.jpg",
 		},
 		sluzby: {
 			elements: {
