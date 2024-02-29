@@ -1,0 +1,130 @@
+---
+
+const {id, city, year, title, img } = Astro.props;
+---
+
+<li class="accordion">
+    <div class="top">
+        <span class="city">{city}</span>
+        <span class="year">{year}</span>
+        <h3 class="title">{title}</h3>
+    </div>
+    <div  id={id} class="bottom">
+        <img src={img} alt=`${title} referencia` class="img">
+    </div>
+    <span class="line"/>
+</li>
+
+<style>
+    .accordion {
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 2rem 0;
+        background-color: white;
+    }
+    .top {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        margin: 0.5rem 0 ;
+    }
+    .city {
+        height: 20px;
+        flex: 1;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .year {
+        height: 20px;
+        flex: 1;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .title {
+        height: 40px;
+        flex: 2;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 48px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .line {
+        width: 100%;
+        height: 1px;
+        margin-top: 1rem;
+        background-color: black;
+    }
+    .bottom {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        width: 100%;
+        background-color: transparent;
+        height: 100%;
+        opacity: 0;
+        transform: translateY(60px);
+        transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+    .visible {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    .sticky {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    @media screen and (min-width: 768px){
+        .img {
+            max-width: 760px;
+            height: 510px;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+</style>
+<script>
+    const accordions = document.querySelectorAll('.accordion');
+    // @ts-ignore
+    let rafId: any;
+
+    function checkAccordions() {
+        const triggerBottom = window.innerHeight / 5 * 4;
+
+        accordions.forEach(accordion => {
+            const accordionTop = accordion.getBoundingClientRect().top;
+            const bottomClass = accordion.querySelector(`.bottom`);
+
+            if (accordionTop < triggerBottom) {
+                bottomClass?.classList.add('visible');
+                accordion.classList.add('sticky');
+            } else {
+                bottomClass?.classList.remove('visible');
+                accordion.classList.remove('sticky');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(checkAccordions);
+    });
+</script>

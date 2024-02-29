@@ -4,9 +4,10 @@ import Footer from '../components/Footer.astro';
 interface Props {
 	title: string;
 	description?: string;
+	style?: "primary" | "secondary";
 }
 
-const { title, description } = Astro.props;
+const { title, description, style } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +24,7 @@ const { title, description } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<Header/>
+		<Header style={style}/>
 		<main>
 			<slot />
 		</main>
@@ -46,6 +47,10 @@ const { title, description } = Astro.props;
 		background: #fff;
 		background-size: 224px;
 		color: black;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		overflow-x: hidden;
+		position: relative;
 	}
 	*,
 	body {
@@ -53,6 +58,8 @@ const { title, description } = Astro.props;
 		padding: 0;
 		box-sizing: border-box;
 		scroll-behavior: smooth;
+		position: relative;
+		
 	}
 	main {
 		position: relative;
@@ -67,5 +74,93 @@ const { title, description } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+	h1 {
+		font-size: 40px;
+		line-height: 48px;
+		font-weight: 400;
+	}
+	h2 {
+		font-size: 28px;
+		line-height: 32px;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 28px;
+		line-height: 32px;
+		font-weight: 400;
+	}
+	p {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+	}
+	span {
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 600;
+	}
+	a {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	ul {
+		list-style: none;
+	}
+	@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 48px;
+		line-height: 56px;
+		font-weight: 400;
+	}
+	h2 {
+		font-size: 32px;
+		line-height: 40px;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 32px;
+		line-height: 40px;
+		font-weight: 400;
+	}
+	p {
+		font-size: 20px;
+		line-height: 28px;
+		font-weight: 400;
+	}
+	span {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 600;
+	}
+	}
+	@media screen and (min-width: 1024px) {
+	h1 {
+		font-size: 60px;
+		line-height: 72px;
+		font-weight: 400;
+	}
+	h2 {
+		font-size: 40px;
+		line-height: 48px;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 40px;
+		line-height: 48px;
+		font-weight: 400;
+	}
+	p {
+		font-size: 24px;
+		line-height: 32px;
+		font-weight: 400;
+	}
+	span {
+		font-size: 20px;
+		line-height: 28px;
+		font-weight: 600;
+	}
 	}
 </style>

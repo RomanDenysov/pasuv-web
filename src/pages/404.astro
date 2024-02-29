@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+import Divider from '../components/ui/Divider.astro';
+import HomePageHero from '../components/HomePageHero.astro';
+import { textData } from '../lib/text-data';
+import AccordionList from '../components/accordion/AccordionList.astro';
+import { Icon } from 'astro-icon/components'
+
+const sluzbyData = textData.homepage.sluzby;
+const referencieData= textData.homepage.referencie;
+const ktoSme = textData.homepage.ktosme;
+
+---
+
+<Layout title="Welcome to Pasuv" style='primary'>
+	<HomePageHero/>
+		<section class="container">
+
+			<Divider title={sluzbyData.elements.subtitle}/>
+			<ul>
+				{sluzbyData.content.map((card) => (
+					<Card
+						title={card.title}
+						body={card.content}
+						src={card.img}
+						sertificats={card.sertificats}
+					/>
+				))
+				}
+			</ul>
+			<Divider title={referencieData.elements.subtitle}/>
+			<div class="flex-box">
+				<h1>
+					{referencieData.content.title}
+				</h1>
+				<p>
+					{referencieData.content.content}
+				</p>
+			</div>
+			<AccordionList/>
+			<div class="button-box">
+				<Button green href="/referencie" body={referencieData.elements.button.toUpperCase()} size={'large'}/>
+			</div>
+			<div class="flex-box">
+				<img src={ktoSme.photoblock.img1} alt="" class="imgblock">
+				<img src={ktoSme.photoblock.img2} alt="" class="imgblock">
+			</div>
+			<Divider title={ktoSme.elements.subtitle}/>
+			<div class="flex-box">
+				<h1>
+					{ktoSme.content.title}
+				</h1>
+				<p>
+					{ktoSme.content.content}
+				</p>
+			</div>
+			<div class="button-box">
+				<Button green href="/ktosme" body={ktoSme.elements.button.toUpperCase()} size={'large'} size={'large'}/>
+			</div>
+			<div class="img-box">
+				<img src={ktoSme.elements.img} alt="" class="img-big">
+				<div class="text-box">
+					<Icon name="ArrowR" size={26} style={{alignSelf: 'start'}}/>
+					<span>{ktoSme.elements.imgTitle}</span>
+				</div>
+			</div>
+		</section>
+</Layout>
+
+<style>
+	.container {
+		padding: 0 1rem;
+		width: 100%;
+		height: 100%;
+	}
+	.flex-box {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 240px;
+		gap: 2rem;
+	}
+	.flex-box h1{
+		flex: 1;
+		align-self: start;
+		line-height: 1; 
+	}
+	.flex-box p{
+		flex: 1;
+		line-height: 1; 
+		margin-top: 20px;
+	}
+	.imgblock {
+		flex: 1;
+		align-self: center;
+		max-width: 430px;
+
+		width: 100%;
+		height: auto;
+		margin-bottom: 20px;
+		object-fit: cover;
+	}
+	.button-box {
+		display: flex;
+		justify-content: center;
+		margin-top: 120px;
+		margin-bottom: 240px;
+	}
+	.img-box {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		margin-bottom: 240px;
+	}
+	.img-big {
+		max-width: 100%;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+	.text-box {
+		text-align: start;
+		font-size: 14px;
+		font-weight: 600; 
+		margin-top: 1rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+	}
+	@media screen and (min-width: 768px){
+		.container {
+			margin: 0 auto;
+			max-width: 992px;
+			width: 100%;
+			height: 100%;
+		}
+		.imgblock{
+			max-width: 460px;
+		}
+	}
+	@media screen and (min-width: 992px) {
+	
+		.container {
+			padding: 2rem;
+			max-width: 1440px;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	@media screen and (min-width: 1024px){
+		.flex-box {
+			flex-direction: row;
+		}		
+	}
+	@media screen and (min-width: 1200px){
+		
+		.imgblock{
+			max-width: 550px;
+		}	
+	}
+	
+</style>
+

@@ -1,0 +1,36 @@
+---
+interface DividerProps {
+    title?: string;
+    black?: boolean;
+}
+const {title, black = false} = Astro.props as DividerProps;
+---
+<div class="divider">
+    {title && <span class="sub">{title.toUpperCase()}</span>}
+    <span class:list={["line", {black: black}]} />
+</div>
+<style>
+    .divider {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 120px auto;
+        gap: 1rem;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+    .sub {
+        font-size: 13 px;
+        color: var(--gray-neutral);
+    }
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: var(--gray-neutral);
+    }
+    .line.black {
+        background-color: black;
+    }
+</style>

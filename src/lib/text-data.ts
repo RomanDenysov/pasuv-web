@@ -1,3 +1,4 @@
+
 export const textData = {
 	homepage: {
 		hero: {
@@ -5,12 +6,13 @@ export const textData = {
 			content:
 				"Máte nedostatok kvalifikovaného personálu na stavebnom projekte, alebo potrebujete urýchliť jeho realizáciu? Sme pripravení čo najskôr k vám vyslať potrebný počet skúsených pracovníkov.",
 			button: "Začnime spolupracovať",
-		},
-		intro: {
-			content:
-				"Už od roku 2013 spolupracujeme na rôznych stavebných projektoch. Špecializujeme sa na priemyselnú aj bytovú výstavbu, stavbu hotelov, škôl a komerčných objektov.",
-			info: "Elektrikári, murári, vodoinštalatéri, stavební pracovníci a ďalšie profesie",
-			img: "hero-image-homepage.jpg",
+			img: "/pasuv-video-bg.jpg",
+			intro: {
+				subtitle:
+					"Už od roku 2013 spolupracujeme na rôznych stavebných projektoch. Špecializujeme sa na priemyselnú aj bytovú výstavbu, stavbu hotelov, škôl a komerčných objektov.",
+				info: "Elektrikári, murári, vodoinštalatéri, stavební pracovníci a ďalšie profesie",
+				img: "hero-image-homepage.jpg",
+			},
 		},
 		sluzby: {
 			elements: {
@@ -23,20 +25,32 @@ export const textData = {
 				{
 					title: "Stabilita",
 					content:
-						"Vďaka viac než 10-ročným skúsenostiam a dlhodobým spoluprácam s praxou overenými elektrikármi, murármi či inštalatérmi, v nás získavate stabilného partnera, ktorý promptne reaguje na akékoľvek dopyty.<br/><br/>Naša spoločnosť má všetky potrebné registrácie a povolenia na vykonávanie stavebných činností v Nemecku a v celej EÚ.",
-					img: "electrician.jpg",
+						`Vďaka viac než 10-ročným skúsenostiam a dlhodobým spoluprácam s praxou overenými elektrikármi, murármi či inštalatérmi, v nás získavate stabilného partnera, ktorý promptne reaguje na akékoľvek dopyty.
+						
+						
+						Naša spoločnosť má všetky potrebné registrácie a povolenia na vykonávanie stavebných činností v Nemecku a v celej EÚ.`,
+					img: "/homepage-cards/Content-Image-Stability.jpg",
+					sertificats: false,
 				},
 				{
 					title: "Zodpovednosť",
 					content:
-						"Sme držiteľom certifikátov kvality ISO a certifikátu dôveryhodnosti Bisnode AAA. Naša spoločnosť je prosperujúca a ekonomicky zdravá. Máme poistenie zodpovednosti proti škodám až do výšky 2,5 milióna EUR.<br/><br/>Poctivo si plníme všetky zmluvné a finančné záväzky voči úradom, klientom aj verejnosti.",
-					img: "mason.jpg",
+						`Sme držiteľom certifikátov kvality ISO a certifikátu dôveryhodnosti Bisnode AAA. Naša spoločnosť je prosperujúca a ekonomicky zdravá. Máme poistenie zodpovednosti proti škodám až do výšky 2,5 milióna EUR.
+						
+			
+						Poctivo si plníme všetky zmluvné a finančné záväzky voči úradom, klientom aj verejnosti.`,
+					img: "/homepage-cards/Content-Image-Responsibility.jpg",
+					sertificats: true,
 				},
 				{
 					title: "Skúsenosti",
 					content:
-						"Na vaše projekty vysielame ucelené partie 2-3-4 skúsených stavebných pracovníkov. Počet a zloženie radi prispôsobíme vašim požiadavkám a potrebám. Členom tímu je vždy nemecky hovoriaci vedúci pracovník.<br/><br/>Dbáme na to, aby naša činnosť bola v súlade s predpismi a legislatívou Nemecka či EÚ. Rovnaký prístup vyžadujeme od našich stavebných pracovníkov.",
-					img: "plumber.jpg",
+						`Na vaše projekty vysielame ucelené partie 2-3-4 skúsených stavebných pracovníkov. Počet a zloženie radi prispôsobíme vašim požiadavkám a potrebám. Členom tímu je vždy nemecky hovoriaci vedúci pracovník.
+						
+						
+						Dbáme na to, aby naša činnosť bola v súlade s predpismi a legislatívou Nemecka či EÚ. Rovnaký prístup vyžadujeme od našich stavebných pracovníkov.`,
+					img: "/homepage-cards/Content-Image-Experience.jpg",
+					sertificats: false,
 				},
 			],
 		},
@@ -56,70 +70,74 @@ export const textData = {
 					title: "Am Tacheles",
 					year: "2023",
 					city: "Berlin",
-					img: "Am-Tacheles.jpg",
+					img: "/referencie/AM-Tacheles.jpg",
 				},
 				{
 					id: 2,
 					title: "Mercator One",
 					year: "2016",
 					city: "Duisburg",
-					img: "Mercator-One.jpg",
+					img: "/referencie/Mercator-One.jpg",
 				},
 				{
 					id: 3,
 					title: "Hotel H2",
 					year: "2015",
 					city: "Leipzig",
-					img: "Hotel-H2.jpg",
+					img: "/referencie/Hotel-H2.jpg",
 				},
 				{
 					id: 4,
 					title: "Hala",
 					year: "2018",
 					city: "Rostrock",
-					img: "Hala.jpg",
+					img: "/referencie/AM-Tacheles.jpg",
 				},
 				{
 					id: 5,
 					title: "Ubytovňa",
 					year: "2022",
 					city: "Leipzig",
-					img: "Ubytovňa.jpg",
+					img: "/referencie/AM-Tacheles.jpg",
 				},
 				{
 					id: 6,
 					title: "Výskumné centrum BV LMTK",
 					year: "2021",
 					city: "Köln",
-					img: "BV-LMTK.jpg",
+					img: "/referencie/AM-Tacheles.jpg",
 				},
 				{
 					id: 7,
 					title: "AWI Institut",
 					year: "2018",
 					city: "Potsdam",
-					img: "AWI-Institut.jpg",
+					img: "/referencie/AM-Tacheles.jpg",
 				},
 				{
 					id: 8,
 					title: "VGP Komplex",
 					year: "2020",
 					city: "Berlin",
-					img: "VGP-Komplex.jpg",
+					img: "/referencie/VGP-Komplex.jpg",
 				},
 			],
 		},
 		ktosme: {
+			photoblock: {
+				img1: "/about-us.jpg",
+				img2: "/referencie/AM-Tacheles.jpg",
+			},
 			elements: {
 				subtitle: "Kto sme",
 				button: "Zistite o nás viac",
-				img: "about-us.jpg",
+				img: "/referencie/VGP-Komplex.jpg",
 				imgTitle: "Am Tacheles / Berlin, 2023",
 			},
 			content: {
 				title: "Od roku 2013 sme úspešne zrealizovali 89 stavieb v 6 krajinách",
 				content:
-					"Naša stavebná firma patrí k popredným subdodávateľom pre klientov v rámci celej EÚ, no predovšetkým v Nemecku. Teší nás, že sme si za tento čas vybudovali renomé stabilného partnera, ktorý doťahuje veci do úspešného konca.<br/><br/>Zároveň ide o záväzok, ktorý si vážime a každý deň pracujeme na tom, aby sme vám poskytovali stavebné služby na najvyššej úrovni.",
+					"Naša stavebná firma patrí k popredným subdodávateľom pre klientov v rámci celej EÚ, no predovšetkým v Nemecku. Teší nás, že sme si za tento čas vybudovali renomé stabilného partnera, ktorý doťahuje veci do úspešného konca. Zároveň ide o záväzok, ktorý si vážime a každý deň pracujeme na tom, aby sme vám poskytovali stavebné služby na najvyššej úrovni.",
 			},
 		},
 	},

@@ -1,23 +1,41 @@
 ---
 import Wrapper from "../layouts/Wrapper.astro";
-import Button from "./Button.astro";
+import Button from "./ui/Button.astro";
 import { footerData } from '../lib/text-data';
+import { Icon } from "astro-icon/components";
 
 ---
 
 <footer class="footer">
-  <Wrapper>
     <div class="container">
       <div class="section one">
-        <h2>
+        <h3>
           {footerData.section1.content}
-        </h2>
-        <Button body={footerData.section1.button.toUpperCase()}>
+        </h3>
+        <div class="button-box">
+          <Button href="/kontakt" footer body={footerData.section1.button.toUpperCase()} size={'large'}/>
+        </div>
       </div>
       <div class="section two">
-        <div class="two-item">{footerData.section2.content}</div>
-        <div class="two-item">{footerData.section2.mailbutton}</div>
-        <div class="two-item">{footerData.section2.phonebutton}</div>
+        <h2 class="two-item">Stabilita.<br/>Zodpovednosť.<br/>Skúsenosti.<br/></h2>
+        <a href="#" class="two-item">
+          <button class="contact-button">
+            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M27 7L5 7C3.89543 7 3 7.89543 3 9L3 24C3 25.1046 3.89543 26 5 26L27 26C28.1046 26 29 25.1046 29 24L29 9C29 7.89543 28.1046 7 27 7Z" stroke="white" stroke-width="2"/>
+              <path d="M3 8L14.6434 18.7478C15.4096 19.455 16.5904 19.455 17.3566 18.7478L29 8" stroke="white" stroke-width="2"/>
+              <path d="M19.25 17L29 25M3 25L12.75 17" stroke="white" stroke-width="2"/>
+            </svg>
+          </button>
+          <h3 class="link">{footerData.section2.mailbutton}</h3>
+        </a>
+        <a href="#" class="two-item ">
+          <button class="contact-button">
+            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12.9735 18.0265C10.8476 15.9005 10.0004 13.4405 10.0004 13.4405L12.2052 11.2357C12.586 10.8549 12.7009 10.2816 12.4965 9.78185L10.0445 3.82755C9.75986 3.13805 8.96747 2.81468 8.28197 3.10865L3.81224 5.02483C3.26705 5.25733 2.93566 5.81989 3.01049 6.40784C3.33119 8.91597 4.66075 15.66 10.0004 20.9996C15.34 26.3392 22.084 27.6688 24.5922 27.9895C25.1801 28.0643 25.7427 27.7329 25.9752 27.1878L27.8913 22.718C28.1853 22.0325 27.862 21.2401 27.1724 20.9555L21.2181 18.5035C20.7184 18.2991 20.1451 18.4126 19.7643 18.7948L17.5595 20.9996C17.5595 20.9996 15.0995 20.1524 12.9735 18.0265Z" stroke="white" stroke-width="2"/>
+            </svg>
+          </button>
+          <h3 class="link">{footerData.section2.phonebutton}</h3>
+        </a>
       </div>
       <div class="section three">
         <div class="three-item">
@@ -32,7 +50,7 @@ import { footerData } from '../lib/text-data';
           <span>
             {footerData.section3.item1.address}
           </span>
-          <a href=""> {footerData.section3.item1.button}</a>
+          <a href="">{footerData.section3.item1.button}</a>
         </div>
         
         <div class="three-item">Item tree 3</div>
@@ -49,10 +67,64 @@ import { footerData } from '../lib/text-data';
         </div>
       </div>
     </div>
-  </Wrapper>
 </footer>
 
 <style>
+  .contact-button {
+    background-color: var(--green);
+    border: 1px solid white;
+    border-radius: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 76px;
+    width: 76px;
+    margin-right: 1rem;
+    transition: all 0.5s ease-in-out;
+  }
+  .contact-button:hover {
+    background-color: white;
+  }
+  .contact-button:hover svg path{
+    stroke: var(--green);
+    animation: shake 3s ease-in-out infinite;
+  }
+  @keyframes shake {
+  0% {
+    transform: rotateZ(0);
+  }
+  10% {
+    transform: rotateZ(10deg);
+  }
+  20% {
+    transform: rotateZ(-5deg);
+  }
+  30% {
+    transform: rotateZ(3.33deg);
+  }
+  40% {
+    transform: rotateZ(-2.5deg);
+  }
+  50% {
+    transform: rotateZ(2deg);
+  }
+  60% {
+    transform: rotateZ(-1.67deg);
+  }
+  70% {
+    transform: rotateZ(1.43deg);
+  }
+  80% {
+    transform: rotateZ(-1.25deg);
+  }
+  90% {
+    transform: rotateZ(1.11deg);
+  }
+  100% {
+    transform: rotateZ(0);
+  }
+}
   footer {
     background-color: var(--green);
     color: white;
@@ -60,8 +132,13 @@ import { footerData } from '../lib/text-data';
     text-align: center;
     width: 100%;
     height: fit-content;
+    z-index: -3;
   }
-
+  .button-box {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
   .container {
     max-width: 100%;
     height: 100%;
@@ -69,6 +146,7 @@ import { footerData } from '../lib/text-data';
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 2rem 2rem 0 2rem;
   }
   .section {
     display: flex;
@@ -84,9 +162,16 @@ import { footerData } from '../lib/text-data';
     gap: 100px;
     margin: 240px 0 120px 0;
   }
+  .section.one h3 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+  }
   .two {
+    
     flex: 2;
     justify-content: space-between;
+
     margin: 120px 0;
   }
   .three {
@@ -101,11 +186,31 @@ import { footerData } from '../lib/text-data';
     margin: 60px 0;
   }
   .two-item{
+    color: white;
     flex: 1;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     text-align: start;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+  }
+  .link{
+    position: relative; 
+    transition: all 0.5s ease-in-out;
+  }
+  .link::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background-color: white;
+    width: 0%;
+    height: 3px;
+    transition: all 0.4s ease-in-out;
+  }
+  .two-item:hover .link::before{
+    width: 100%;
   }
   .three-item{
     flex: 1;

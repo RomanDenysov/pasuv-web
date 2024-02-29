@@ -1,0 +1,208 @@
+---
+interface Props {
+	body: string;
+	href?: string;
+    external?: boolean;
+    size?: 'small' | 'medium' | 'large';
+    green?: boolean;
+    footer?: boolean;
+    black?: boolean;
+}
+
+const { href, body, external = false, size = 'medium', green = false, footer = false, black=false } = Astro.props as Props;
+
+---
+
+{href ? (
+    external ? (
+        <a href={href} rel="noopener noreferrer" target="_blank" class="link">
+            <button class:list={["button", size, {green: green}, {footer: footer}, {black: black}]}>
+                {body}
+                <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M68 20L19 69" stroke="white" stroke-width="8"/>
+                    <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
+                </svg>
+            </button>
+        </a>)  : (
+        <a href={href} class="link">
+            <button class:list={["button", size, {green: green}, {footer: footer}, {black: black}]}>
+                {body}
+                <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M68 20L19 69" stroke="white" stroke-width="8"/>
+                    <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
+                </svg>
+            </button>
+        </a>)
+        ) : (
+    <button class:list={["button", size, {green: green}, {footer: footer}, {black: black}]}>
+        {body}
+        <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M68 20L19 69" stroke="white" stroke-width="8"/>
+            <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
+        </svg>
+
+    </button>
+)}
+
+<style>
+	.button {
+        align-self: center;
+        font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+
+        text-decoration: none;
+        height: 78px;
+        width: 337px;
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-weight: 500;
+		
+        font-size: 20px;
+        line-height: 28px;
+        color: white;
+
+        transition: all 0.4s 0.1s ease-in-out;
+        cursor: pointer;
+        position: relative;
+	}
+    .button.small {
+        width: 180px; /* Пример маленького размера */
+        height: 50px;
+        font-size: 16px;
+        line-height: 24px;
+        gap: 6px;
+        z-index: 1;
+    }
+    .button.small:hover{
+        color: black;
+    }
+    .button.small.black:hover{
+        color: white;
+    }
+    .button.small svg {
+        width: 16px;
+        height: 16px;
+    }
+    .button.medium {
+        width: 200px; /* Пример среднего размера */
+        height: 48px;
+        font-size: 16px;
+    }
+    .button.large {
+        align-self: self-start;
+        min-width: 340px; /* Пример большого размера */
+        min-height: 80px;
+        max-width: max-content;
+        width: 100%;
+        padding: 20px 40px;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 500;
+        z-index: 1;
+    }
+    .button.large svg {
+        width: 24px;
+        height: 24px;
+    }
+    .green {
+        background-color: transparent;
+        border: 1px solid var(--green);
+        color: var(--green);
+    }
+    .black {
+        background-color: transparent;
+        border: 1px solid black;
+        color: black;
+        z-index: 1;
+    }
+    .footer {
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
+    }
+    path {
+        stroke-width: 8;
+    }
+    .link {
+        text-decoration: none;
+    }
+    .button svg {
+        transition: all 0.3s 0.3s ease-in-out;
+    }
+    .button svg path {
+        stroke: white;
+    }
+    .green svg path {
+        stroke: var(--green);
+    }
+    .black svg path {
+        stroke: black;
+    }
+    .button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0; 
+        left: 0;
+        margin: auto;
+        clip-path: circle(0% at 50% 50%);
+        transition: all 0.5s 0.1s ease-in-out;
+        border-radius: 38px;
+        background-color: white;
+        z-index: -1;
+        border: none;
+    }
+    .green::before {
+        background-color: var(--green);
+    }
+    .black::before {
+        background-color: black;
+    }
+    .button:is(:hover, :focus-within) {
+		color: black;
+	}
+    .button:hover::before {
+        clip-path: circle(100% at 50% 50%);
+    }
+    .button:is(:hover, :focus-within) svg {
+        transform: rotate(45deg);
+    }
+    .button:is(:hover, :focus-within) svg path {
+        stroke: black;
+    }
+    .green:is(:hover, :focus-within) svg path {
+        stroke: white;
+    }
+    .green:is(:hover, :focus-within) {
+		color: white;
+	}
+    
+    .footer:is(:hover, :focus-within) svg path {
+        stroke: var(--green);
+    }
+    .footer:is(:hover, :focus-within) {
+		color: var(--green);
+	}
+    .black:is(:hover, :focus-within) {
+        color: white;
+    }
+    .black:is(:hover, :focus-within) {
+        color: white;
+    }
+    .black:is(:hover, :focus-within) svg path {
+        stroke: white;
+    }
+    svg path {
+        transition: all 0.3s 0.1s ease-in-out;
+    }
+	@media screen and (min-width: 768px){
+        
+    }
+</style>

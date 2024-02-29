@@ -1,0 +1,38 @@
+---
+import AccordionItem from './AccordionItem.astro';
+import { textData } from '../../lib/text-data';
+
+
+const referencieData= textData.homepage.referencie;
+---
+<ul>
+    <span class="line" />
+    {referencieData.accordion.map((item) => (
+        <AccordionItem 
+            id={item.id}
+            key={item.id}
+            city={item.city}
+            year={item.year}
+            title={item.title}
+            img={item.img}
+        />
+    ))
+    }
+</ul>
+<style>
+    ul {
+        max-width: 100%;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: white;
+    }
+    .line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: var(--gray-light);
+        margin-top: 1rem;
+    }
+</style>
+

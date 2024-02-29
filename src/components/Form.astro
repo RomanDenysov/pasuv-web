@@ -1,0 +1,184 @@
+---
+
+---
+
+<form action="">
+    <h1>
+        Máte otázky alebo záujem o spoluprácu? 
+        <br/>
+        Kontaktujte nás
+    </h1>
+    <label for="theme">Téma</label>
+    <select class="gray" name="theme" id="theme">
+        <option value="0" selected disabled>Zvoľte tému správy</option>
+        <option value="spolupraca">Záujem o spoluprácu</option>
+        <option value="cena">Cenová ponuka</option>
+        <option value="otazky">Otázky a dopyty</option>
+        <option value="info">Všeobecné informácie</option>
+        <option value="reklama">Marketing a reklama</option>
+    </select>
+    <label  for="meno">Meno</label>
+    <input class="gray" type="text" name="meno" id="meno" placeholder="Zadajte vaše meno">
+    <label for="email">E-mail</label>
+    <input class="gray" type="email" name="email" id="email" placeholder="Zadajte váš e-mail">
+    <label for="phone">Telefón</label>
+    <input class="gray" type="text" name="phone" id="phone" placeholder="Zadajte vaše telefónne číslo">
+    <label for="message">Správa</label>
+    <textarea class="gray" name="message" id="message" placeholder="Zadajte text správy"/>
+    <div class="flex-box">
+        <span>Beriem na vedomie, že moje osobné údaje budú spracovávané za účelom komunikácie týkajúcej sa možnej spolupráce alebo uzatvorenia zmluvy. Bližšie informácie nájdete v <a href="#">zásadách spracovania osobných údajov.</a></span>
+        <button type="submit" value="Odoslať" class="btn-primary">
+            Odoslať
+           
+            <svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 7.5H17.5" stroke="#93BF3E" stroke-width="2"/>
+            <path d="M11 1L17.5 7.5L11 14" stroke="#93BF3E" stroke-width="2"/>
+            </svg>
+            
+        </button>
+    </div>
+</form>
+
+<style>
+    .gray::placeholder {
+        color: var(--gray-neutral) !important;
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Chakra Petch", sans-serif;
+        font-style: normal;
+    }
+    form {
+        max-width: 100%;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 4rem;
+    }
+    h1{
+        margin-bottom: 120px;
+    }
+    label {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #000;
+        margin-bottom: 8px;
+    }
+    select, input, textarea {
+        outline: none;
+        border: none;
+        width: 100%;
+        height: auto;
+        padding-top: 8px;
+        padding-bottom: 1rem;
+        margin-bottom: 56px;
+        border-bottom: 1px solid var(--gray-neutral) !important;
+        color: var(--gray-darkest);
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+        resize: none;
+        scrollbar-width: none;
+    }
+    option {
+        color: var(--gray-darkest);
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Chakra Petch", sans-serif;
+        font-style: normal;
+        background-color: var(--gray-lightest);
+        margin: 10px 0;
+    }
+    select {
+        cursor: pointer;
+        color: var(--gray-darkest);
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+        -webkit-appearance: none;
+        width: 100%;
+        position: relative;
+    }
+    .flex-box{
+        margin-top: 180px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+    }
+    .flex-box span {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        color: var(--gray-neutral);
+    }
+    .btn-primary{
+        align-self: center;
+        font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+
+        text-decoration: none;
+        height: 75px;
+        width: 150px;
+        background-color: transparent;
+        border: 1px solid var(--gray-neutral);
+        border-radius: 38px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        font-weight: 500;
+		
+        font-size: 20px;
+        line-height: 28px;
+        color: var(--green);
+
+        transition: all 0.5s 0.1s ease-in-out;
+        cursor: pointer;
+        position: relative;
+    }
+    .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0; 
+        left: 0;
+        margin: auto;
+        clip-path: circle(0% at 50% 50%);
+        transition: all 0.5s 0.1s ease-in-out;
+        border-radius: 38px;
+        background-color: var(--green);
+        z-index: -1;
+        border: none;
+    }
+    .btn-primary:hover::before {
+        clip-path: circle(100% at 50% 50%);
+    }
+    .btn-primary:is(:hover, :focus-within) {
+		color: white;
+	}
+    svg path {
+        transition: all 0.5s 0.1s ease-in-out;
+    }
+    .btn-primary:is(:hover, :focus-within) svg path {
+        stroke: white;
+    }
+    a {
+        color: var(--gray-neutral);
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        text-decoration: underline;
+    }
+</style>

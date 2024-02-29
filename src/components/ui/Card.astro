@@ -1,0 +1,146 @@
+---
+import { Icon } from 'astro-icon/components'
+interface Props {
+	title: string;
+	body?: string;
+	src?: string;
+	sertificats?: boolean
+}
+
+const { src, title, body, sertificats } = Astro.props;
+
+
+---
+
+<li class="link-card">
+		<img src={src} alt={title}/>
+		<h1>
+			{title}
+		</h1>
+		<p>
+			{body}
+		</p>
+		{sertificats && 
+			<div class="sertificats">
+				<div class="sertificats-item">
+					<span class="sertificats-separator"/>
+					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<span class="sertificats-subtitle">ISO 9001:2015</span>
+				</div>
+				<div class="sertificats-item">
+					<span class="sertificats-separator"/>
+					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<span class="sertificats-subtitle">ISO 14001:2015</span>
+				</div>
+				<div class="sertificats-item">
+					<span class="sertificats-separator"/>
+					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<span class="sertificats-subtitle">ISO 9001:2015</span>
+				</div>
+				<div class="sertificats-item">
+					<span class="sertificats-separator"/>
+					<Icon name="POS" size={100} style={{alignSelf: 'start'}}/>
+					<span class="sertificats-subtitle">Poistenie zodpovednosti proti škodám až do výšky<br/>2 500 000 €</span>
+				</div>
+				
+				
+			</div>
+		}
+</li>
+
+
+<style>
+	.sertificats{
+		margin-top: 2.5rem;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		place-items: start;
+		place-content: start;
+		column-gap: 1rem;
+		row-gap: 3rem;
+	}
+	.sertificats-item{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 1rem;
+	}
+	.sertificats-separator{
+		width: 90%;
+		height: 1px;
+		background-color: #000;
+	}
+	.sertificats-logo{
+		width: 34px;
+		height: auto;
+		object-fit: contain;
+		object-position: center;
+	}
+	.sertificats-subtitle{
+		width: 60%;
+		font-weight: 600;
+	}
+
+
+	.link-card {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 1rem;
+		width: 100%;
+		height: auto;
+		margin-bottom: 120px;
+	}
+	.link-card h1 {
+		color: black;
+		text-align: start;
+	}
+	.link-card img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		margin-bottom: 1.5rem;
+	}
+	@media screen and (min-width: 1024px) {
+		.link-card {
+			width: 460px;
+			height: auto;
+			margin-bottom: -650px;
+		}
+		.link-card:nth-child(even) {
+			margin-left: calc(100% - 460px);
+		}
+		.link-card:last-child {
+			margin-bottom: 0;
+		}
+		
+	}
+	@media screen and (min-width: 1240px) {
+		.link-card {
+			width: 560px;
+			height: auto;
+			margin-bottom: -650px;
+		}
+		.link-card:nth-child(even) {
+			margin-left: calc(100% - 560px);
+		}
+		.sertificats-subtitle{
+			width: 90%;
+		}
+	}
+	@media screen and (min-width: 1440px) {
+		.link-card {
+			width: 590px;
+			height: auto;
+			margin-bottom: -650px;
+		}
+		.link-card:nth-child(even) {
+			margin-left: calc(100% - 590px);
+		}
+	}
+</style>

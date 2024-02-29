@@ -1,0 +1,106 @@
+---
+import Hero from "../components/Hero.astro";
+import ReferenceCard from "../components/ReferenceCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+const referenceData = [
+                {
+					id: 1,
+					title: "Am Tacheles",
+					year: "2023",
+					city: "Berlin",
+                    category: "Občianska výstavba",
+                    img: "/referencie/AM-Tacheles.jpg",
+					images: ["/referencie/AM-Tacheles.jpg", "/referencie/Mercator-One.jpg", "/referencie/Mercator-One.jpg"],
+				},
+				{
+					id: 2,
+					title: "Mercator One",
+					year: "2016",
+					city: "Duisburg",
+                    category: "Občianska výstavba",
+                    img: "/referencie/AM-Tacheles.jpg",
+					images: ["/referencie/Mercator-One.jpg", "/referencie/Mercator-One.jpg", "/referencie/Mercator-One.jpg"],
+				},
+				{
+					id: 3,
+					title: "Hotel H2",
+					year: "2015",
+					city: "Leipzig",
+                    category: "Občianska výstavba",
+                    img: "/referencie/AM-Tacheles.jpg",
+					images: ["/referencie/Hotel-H2.jpg"],
+				},
+				{
+					id: 4,
+					title: "Hala",
+					year: "2018",
+					city: "Rostrock",
+                    category: "Občianska výstavba",
+                    img: "/referencie/AM-Tacheles.jpg",
+					images: ["/referencie/AM-Tacheles.jpg"],
+				},
+				{
+					id: 5,
+					title: "Ubytovňa",
+					year: "2022",
+					city: "Leipzig",
+                    category: "Občianska výstavba",
+                    img: "/referencie/AM-Tacheles.jpg",
+					images: ["/referencie/AM-Tacheles.jpg"],
+				},
+				{
+					id: 6,
+					title: "Výskumné centrum BV LMTK",
+					year: "2021",
+					city: "Köln",
+                    category: "Občianska výstavba",
+                    img: "/referencie/AM-Tacheles.jpg",
+					images: ["/referencie/AM-Tacheles.jpg"],
+				},
+				{
+					id: 7,
+					title: "AWI Institut",
+					year: "2018",
+					city: "Potsdam",
+                    category: "Občianska výstavba",
+                    img: "/referencie/AM-Tacheles.jpg",
+					images: ["/referencie/AM-Tacheles.jpg"],
+				},
+				{
+					id: 8,
+					title: "VGP Komplex",
+					year: "2020",
+					city: "Berlin",
+                    category: "Občianska výstavba",
+                    img: "/referencie/AM-Tacheles.jpg",
+					images: ["/referencie/VGP-Komplex.jpg"],
+				},
+]
+
+---
+
+<Layout title="Referencie" style="secondary">
+    <Hero 
+        img="hero-projects.jpg"
+        title="Našou vizitkou sú spokojní partneri" 
+        subtitle="Referencie" 
+        content1="Od roku 2013 sme úspešne zrealizovali 89 stavieb v 6 krajinách. Našich profesionálov vysielame na súkromné developerské projekty, poskytujeme stavebné služby aj v štátnej a občianskej sfére."
+        content2="Základným pilierom našej filozofie je vaša spokojnosť. Aj preto dbáme na jasnú a transparentnú komunikáciu už od samého začiatku spolupráce. To, na čom sa dohodneme, vám v plnom rozsahu dodáme."
+    />
+    <section class="section">
+        <div class="container">
+           {referenceData.map((reference) => (
+                <ReferenceCard 
+                    key={reference.id}
+                    title={reference.title}
+                    year={reference.year}
+                    city={reference.city}
+                    category={reference.category}
+                    img={reference.img}
+                    images={reference.images}
+                />
+            ))}
+        </div>
+    </section>
+</Layout>

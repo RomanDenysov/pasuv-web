@@ -1,0 +1,112 @@
+---
+import { textData } from "../../lib/text-data";
+
+
+---
+<div class="avatar-box">
+   <div class="avatar-box-top">
+        <img src="/avatars/ui-face-1.jpg" alt="worker-face-1" class="avatar-img">
+        <img src="/avatars/ui-face-2.jpg" alt="worker-face-2" class="avatar-img">
+        <img src="/avatars/ui-face-3.jpg" alt="worker-face-3" class="avatar-img">
+        <div class="avatar-plus">
+            <span class="line-hor"/>
+            <span class="line-ver"/>
+        </div>
+   </div>
+    <span class="avatar-text">{textData.homepage.hero.intro.info}</span>
+</div>
+
+<style>
+    .avatar-box {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;  
+    }
+    .avatar-box-top {
+        width: 100%;
+        height: auto;
+        align-self: start;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .avatar-img {
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+        margin: 0 -10px;
+        border: 4px solid #fff;
+    }
+    .avatar-img:first-child {
+        z-index: 3;
+    }
+    .avatar-img:nth-child(1) {
+        z-index: 2;
+    }
+    .avatar-img:nth-child(2) {
+        z-index: 1;
+    }
+    .avatar-plus{
+        width: 74px;
+        height: 74px;
+        border-radius: 50%;
+        margin: 0 0 0 -10px;
+        border: 4px solid #fff;
+        background-color: #3F50C2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 4;
+        position: relative;
+    }
+    .line-hor {
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+    }
+    .line-ver {
+        width: 2px;
+        height: 20px;
+        background-color: #fff;
+        position: absolute;
+    }
+    .avatar-text {
+        max-width: 550px;
+        width: 100%;
+        text-align: start;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        color: black;
+    }
+    @media screen and (min-width: 768px){
+        .avatar-box {
+            align-self: start;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+        }
+        .avatar-box-top {
+            width: fit-content;
+            justify-content: flex-start;
+        }
+    }
+    @media screen and (min-width: 992px) {
+        .avatar-box {
+            gap: 1rem;
+            justify-content: flex-start;
+        }
+        .avatar-text {
+            text-align: start;
+            width: 100%;
+        }
+    }
+</style>
