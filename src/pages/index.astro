@@ -32,6 +32,9 @@ const sluzbyCardCascade = [
 		sertificats: false,
 	},
 ];
+
+const buttonUpper1 = t("home.referencie.button");
+const buttonUpper2 = t("home.ktosme.button");
 ---
 
 <Layout
@@ -102,7 +105,7 @@ const sluzbyCardCascade = [
 			<ButtonFlip
 				color="green"
 				href="/referencie"
-				body={t("home.referencie.button").toUpperCase()}
+				body={buttonUpper1.toUpperCase()}
 				size={"large"}
 			/>
 		</div>
@@ -135,7 +138,7 @@ const sluzbyCardCascade = [
 			<ButtonFlip
 				color="green"
 				href="/ktosme"
-				body={t("home.ktosme.button").toUpperCase()}
+				body={buttonUpper2.toUpperCase()}
 				size={"large"}
 				size={"large"}
 			/>

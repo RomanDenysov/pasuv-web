@@ -214,18 +214,24 @@ const referenceData = [
 		<Divider title={t("referencie.info.devider")} />
 		<div class="container">
 			{
-				referenceData.map((reference) => (
-					<ReferenceCard
-						key={reference.id}
-						title={reference.title}
-						year={reference.year}
-						city={reference.city}
-						slug={reference.slug}
-						category={reference.category}
-						img={reference.img}
-						images={reference.images}
-					/>
-				))
+				referenceData.map((reference) => {
+					if(reference) {
+						return (
+							<ReferenceCard
+							key={reference.id}
+								title={reference.title}
+								year={reference.year}
+								city={reference.city}
+								slug={reference.slug}
+								category={reference.category}
+								img={reference.img}
+								images={reference.images}
+							/>
+						)
+					} else {
+						return null;
+					}
+				})
 			}
 		</div>
 	</section>
