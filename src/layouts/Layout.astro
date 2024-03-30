@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
 interface Props {
 	title: string;
 	description?: string;
@@ -11,7 +12,7 @@ const { title, description, style } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="sk">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content=`${description}` />
@@ -28,7 +29,7 @@ const { title, description, style } = Astro.props;
 		<main>
 			<slot />
 		</main>
-		<!-- <Footer/> -->
+		<Footer/>
 	</body>
 </html>
 <style is:global>

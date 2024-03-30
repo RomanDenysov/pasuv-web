@@ -1,4 +1,3 @@
-
 export const textData = {
 	homepage: {
 		hero: {
@@ -6,50 +5,47 @@ export const textData = {
 			content:
 				"Máte nedostatok kvalifikovaného personálu na stavebnom projekte, alebo potrebujete urýchliť jeho realizáciu? Sme pripravení čo najskôr k vám vyslať potrebný počet skúsených pracovníkov.",
 			button: "Začnime spolupracovať",
-			img: "/pasuv-video-bg.jpg",
+			img: "./pasuv-video-bg.jpg",
 			intro: {
 				subtitle:
 					"Už od roku 2013 spolupracujeme na rôznych stavebných projektoch. Špecializujeme sa na priemyselnú aj bytovú výstavbu, stavbu hotelov, škôl a komerčných objektov.",
 				info: "Elektrikári, murári, vodoinštalatéri, stavební pracovníci a ďalšie profesie",
-				img: "hero-image-homepage.jpg",
+				img: "./hero-image-homepage.jpg",
 			},
 		},
 		sluzby: {
 			elements: {
 				subtitle: "Služby",
 				button: "Viac o službách",
-				img: "services.jpg",
+				img: "./AM-Tacheles.jpg",
 				imgTitle: "Am Tacheles / Berlin, 2023",
 			},
 			content: [
 				{
 					title: "Stabilita",
-					content:
-						`Vďaka viac než 10-ročným skúsenostiam a dlhodobým spoluprácam s praxou overenými elektrikármi, murármi či inštalatérmi, v nás získavate stabilného partnera, ktorý promptne reaguje na akékoľvek dopyty.
+					content: `Vďaka viac než 10-ročným skúsenostiam a dlhodobým spoluprácam s praxou overenými elektrikármi, murármi či inštalatérmi, v nás získavate stabilného partnera, ktorý promptne reaguje na akékoľvek dopyty.
 						
 						
 						Naša spoločnosť má všetky potrebné registrácie a povolenia na vykonávanie stavebných činností v Nemecku a v celej EÚ.`,
-					img: "/homepage-cards/Content-Image-Stability.jpg",
+					img: "./homepage-cards/Content-Image-Stability.jpg",
 					sertificats: false,
 				},
 				{
 					title: "Zodpovednosť",
-					content:
-						`Sme držiteľom certifikátov kvality ISO a certifikátu dôveryhodnosti Bisnode AAA. Naša spoločnosť je prosperujúca a ekonomicky zdravá. Máme poistenie zodpovednosti proti škodám až do výšky 2,5 milióna EUR.
+					content: `Sme držiteľom certifikátov kvality ISO a certifikátu dôveryhodnosti Bisnode AAA. Naša spoločnosť je prosperujúca a ekonomicky zdravá. Máme poistenie zodpovednosti proti škodám až do výšky 2,5 milióna EUR.
 						
 			
 						Poctivo si plníme všetky zmluvné a finančné záväzky voči úradom, klientom aj verejnosti.`,
-					img: "/homepage-cards/Content-Image-Responsibility.jpg",
+					img: "./homepage-cards/Content-Image-Responsibility.jpg",
 					sertificats: true,
 				},
 				{
 					title: "Skúsenosti",
-					content:
-						`Na vaše projekty vysielame ucelené partie 2-3-4 skúsených stavebných pracovníkov. Počet a zloženie radi prispôsobíme vašim požiadavkám a potrebám. Členom tímu je vždy nemecky hovoriaci vedúci pracovník.
+					content: `Na vaše projekty vysielame ucelené partie 2-3-4 skúsených stavebných pracovníkov. Počet a zloženie radi prispôsobíme vašim požiadavkám a potrebám. Členom tímu je vždy nemecky hovoriaci vedúci pracovník.
 						
 						
 						Dbáme na to, aby naša činnosť bola v súlade s predpismi a legislatívou Nemecka či EÚ. Rovnaký prístup vyžadujeme od našich stavebných pracovníkov.`,
-					img: "/homepage-cards/Content-Image-Experience.jpg",
+					img: "./homepage-cards/Content-Image-Experience.jpg",
 					sertificats: false,
 				},
 			],
@@ -88,39 +84,39 @@ export const textData = {
 				},
 				{
 					id: 4,
-					title: "Hala",
+					title: "AW Institut",
 					year: "2018",
 					city: "Rostrock",
-					img: "/referencie/AM-Tacheles.jpg",
+					img: "/Alfred Wegener Institute/Alfred Wegener Institute 1.jpg",
 				},
-				{
-					id: 5,
-					title: "Ubytovňa",
-					year: "2022",
-					city: "Leipzig",
-					img: "/referencie/AM-Tacheles.jpg",
-				},
-				{
-					id: 6,
-					title: "Výskumné centrum BV LMTK",
-					year: "2021",
-					city: "Köln",
-					img: "/referencie/AM-Tacheles.jpg",
-				},
-				{
-					id: 7,
-					title: "AWI Institut",
-					year: "2018",
-					city: "Potsdam",
-					img: "/referencie/AM-Tacheles.jpg",
-				},
-				{
-					id: 8,
-					title: "VGP Komplex",
-					year: "2020",
-					city: "Berlin",
-					img: "/referencie/VGP-Komplex.jpg",
-				},
+				// {
+				// 	id: 5,
+				// 	title: "Labor Wisplinghoff",
+				// 	year: "2022",
+				// 	city: "Leipzig",
+				// 	img: "/Labor Wisplinghoff/Labor Wisplinghoff 1.jpg",
+				// },
+				// {
+				// 	id: 6,
+				// 	title: "Mannheim Turley Barracks",
+				// 	year: "2021",
+				// 	city: "Köln",
+				// 	img: "/Mannheim Turley Barracks/Mannheim Turley Barracks 2.jpg",
+				// },
+				// {
+				// 	id: 7,
+				// 	title: "Neue Mitte Altona",
+				// 	year: "2018",
+				// 	city: "Potsdam",
+				// 	img: "/Neue Mitte Altona/Neue Mitte Altona 1.jpg",
+				// },
+				// {
+				// 	id: 8,
+				// 	title: "VGP Komplex",
+				// 	year: "2020",
+				// 	city: "Berlin",
+				// 	img: "/referencie/VGP-Komplex.jpg",
+				// },
 			],
 		},
 		ktosme: {
@@ -144,13 +140,14 @@ export const textData = {
 };
 export const footerData = {
 	section1: {
-		content: "Spoluprácou s našou spoločnosťou získate stabilného a skúseného partnera počas celej doby realizácie, aj na vaše ďalšie projekty",
+		content:
+			"Spoluprácou s našou spoločnosťou získate stabilného a skúseného partnera počas celej doby realizácie, aj na vaše ďalšie projekty",
 		button: "Kontaktujte nás",
 	},
 	section2: {
 		content: "Stabilita. Zodpovednosť. Skúsenosti.",
-		mailbutton: 'info@pasuv.de',
-		phonebutton: '+421 900 000 000',
+		mailbutton: "info@pasuv.de",
+		phonebutton: "+421 900 000 000",
 	},
 	section3: {
 		item1: {
@@ -166,7 +163,6 @@ export const footerData = {
 		item3: {
 			title: "Na stiahnutie",
 			button: "Katalóg v PDF",
-			
 		},
 		item4: {
 			title: "Sledujte nás",
@@ -178,4 +174,4 @@ export const footerData = {
 		item2: "Nastavenie cookies",
 		item3: "© 2023 Pasuv EU SE. Designed & developed by SMASH",
 	},
-}
+};

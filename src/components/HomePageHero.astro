@@ -1,86 +1,99 @@
 ---
-import Avatars from '../components/ui/Avatars.astro';
-import Button from '../components/ui/Button.astro';
+import Avatars from "../components/ui/Avatars.astro";
+import Button from "../components/ui/Button.astro";
+import ButtonFlip from "../components/ui/ButtonFlip.astro";
 
-import { textData } from '../lib/text-data';
-
+import { textData } from "../lib/text-data";
 
 const heroData = textData.homepage.hero;
 
+type HeroProps = {
+	title: string;
+	content: string;
+	button: string;
+	text: string;
+};
+
+const { title, content, button, text } = Astro.props as HeroProps;
 ---
+
 <section class="hero-container">
-    <div class="hero-box-top">
-        <div class="top-content">
+	<div class="hero-box-top">
+		<div class="top-content">
 			<video autoplay preload="auto" loop class="img-bg">
 				<source src="/videos/video-about.mp4" type="video/mp4" />
 			</video>
 			<!-- <img src={heroData.img} alt="pasuv stavby video" class="img-bg"> -->
-            <div class="img-box">
+			<div class="img-box">
 				<div class="top-text">
-					<h1>{heroData.title}</h1>
-					<p>{heroData.content}</p>
+					<h1>{title}</h1>
+					<p>{content}</p>
 					<div class="button-box">
-						<Button body={textData.homepage.hero.button.toUpperCase()} size={'large'}/>
+						<ButtonFlip
+							body={button.toUpperCase()}
+							href="/kontakt"
+							size={"large"}
+						/>
 					</div>
 				</div>
 			</div>
-        </div>
-    </div>
-    
+		</div>
+	</div>
+
 	<div class="hero-box-bottom">
 		<div class="bottom-content">
-			<h3 class="bottom-text">{heroData.intro.subtitle}</h3>
-			<img src={heroData.intro.img} alt=""/>
+			<h3 class="bottom-text">{text}</h3>
+			<img src={heroData.intro.img} alt="" />
 		</div>
-		<Avatars/>
+		<Avatars />
 	</div>
-    
 </section>
 
 <style>
-
-.hero-container {
-        max-width: 100%;
+	.hero-container {
+		max-width: 100%;
 		max-height: 100%;
+
 		height: 100%;
 		background-color: transparent;
-		margin-bottom: 140px;
-    }
-    .hero-box-top{
+	}
+	.hero-box-top {
 		flex: 1;
 		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 100%;
+		min-height: 958px;
 	}
-	.top-content{
+	.top-content {
 		position: relative;
 		width: 100%;
-		height: 90vh;
+		min-height: 958px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-
 	}
-	.img-bg{
+	.img-bg {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
+		min-height: 958px;
 		object-fit: cover;
 		object-position: center;
 	}
-	.img-box{
-		background-color: rgba(0,0,0,0.5);
+	.img-box {
+		background-color: rgba(0, 0, 0, 0.5);
 		width: 100%;
 		height: 100%;
+		min-height: 958px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	.top-text{
+	.top-text {
 		max-width: 1440px;
 		width: 100%;
 		padding: 2rem 1rem 0 1rem;
@@ -98,17 +111,17 @@ const heroData = textData.homepage.hero;
 		align-items: center;
 		margin-top: 1rem;
 	}
-	.hero-box-bottom{
+	.hero-box-bottom {
 		flex: 1;
 		max-width: 1440px;
 		width: 100%;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		padding: 0 1rem;
-		gap: 4rem;
+		padding: 0;
+		gap: 3rem;
 	}
-	.bottom-content{
+	.bottom-content {
 		width: 100%;
 		display: flex;
 		flex-direction: column-reverse;
@@ -122,112 +135,107 @@ const heroData = textData.homepage.hero;
 		object-fit: cover;
 		margin-top: -1rem;
 	}
-@media screen and (min-width: 410px){
-	.hero-container {
-        max-width: 100%;
-		max-height: 100%;
-		height: 100%;
-		background-color: transparent;
-		margin-bottom: 140px;
-    }
-    .hero-box-top{
-		flex: 1;
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-	}
-	.top-content{
-		position: relative;
-		width: 100%;
-		height: 80vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-	}
-	.img-bg{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-	}
-	.img-box{
-		background-color: rgba(0,0,0,0.5);
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-	.top-text{
-		max-width: 1440px;
-		width: 100%;
-		padding: 2rem 1rem 0 1rem;
-		text-align: center;
-		color: white;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1rem;
-	}
-	.button-box {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 1rem;
-	}
-	.hero-box-bottom{
-		flex: 1;
-		max-width: 1440px;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		padding: 0 1rem;
-		gap: 4rem;
-	}
-	.bottom-content{
-		width: 100%;
-		display: flex;
-		flex-direction: column-reverse;
-		justify-content: center;
-		align-items: center;
-		gap: 2rem;
-	}
-	.bottom-content img {
-		width: 100%;
-		height: auto;
-		object-fit: cover;
-		margin-top: -3rem;
-	}
-}
-	@media screen and (min-width: 768px){
-		.top-content{
-			height: 70vh;
+	@media screen and (min-width: 410px) {
+		.hero-container {
+			max-width: 100%;
+			max-height: 100%;
+			height: 100%;
+			background-color: transparent;
 		}
-		.top-text{
+		.hero-box-top {
+			flex: 1;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+		.top-content {
+			position: relative;
+			width: 100%;
+			height: 80vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.img-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+		.img-box {
+			background-color: rgba(0, 0, 0, 0.5);
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.top-text {
+			max-width: 1440px;
+			width: 100%;
+			padding: 2rem 1rem 0 1rem;
+			text-align: center;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1rem;
+		}
+		.button-box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 1rem;
+		}
+		.hero-box-bottom {
+			flex: 1;
+			max-width: 1440px;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			padding: 0 1rem;
+			gap: 3rem;
+		}
+		.bottom-content {
+			width: 100%;
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: center;
+			align-items: center;
+			gap: 2rem;
+		}
+		.bottom-content img {
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			margin-top: -3rem;
+		}
+	}
+	@media screen and (min-width: 992px) {
+		.top-text {
 			padding: 2rem;
 			align-items: flex-start;
 			justify-content: flex-start;
 			text-align: start;
 		}
-		.top-text h1{
+		.top-text h1 {
 			max-width: 880px;
 		}
-		.top-text p{
+		.top-text p {
 			max-width: 880px;
 		}
-		.hero-box-bottom{
+		.hero-box-bottom {
 			padding: 0 2rem;
 			margin: auto;
 		}
-		.bottom-content{ 
+		.bottom-content {
 			flex-direction: row;
 			gap: 4rem;
 			align-items: flex-end;
@@ -240,8 +248,7 @@ const heroData = textData.homepage.hero;
 			max-width: 420px;
 			width: 100%;
 			flex: 1;
-			margin-top: -6rem;
+			margin-top: -10rem;
 		}
 	}
-
 </style>

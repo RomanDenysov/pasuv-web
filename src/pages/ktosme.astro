@@ -1,92 +1,116 @@
 ---
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import { Icon } from 'astro-icon/components'
-
-
+import { Icon } from "astro-icon/components";
+import { t } from "i18next";
 ---
 
-<Layout title="Referencie" style="secondary">
-    <Hero
-        img="/hero-about-us.jpg"
-        title="Patríme k popredným dodávateľom prác v Nemecku, ale aj v celej EÚ"
-        subtitle="Kto sme"
-        content1="Spoločnosť PASUV vznikla v roku 2013 na Slovensku. Teší nás, že sme si za vyše 10 rokov existencie vybudovali renomé stabilného partnera, ktorý doťahuje veci do úspešného konca."
-        content2="V našo portfóliu nájdete byty, priemyselné objekty, hotely, školy aj komerčné budovy. Aj vám radi pomôžeme s realizáciou vášho stavebného projektu."
-    />
-    <section class="container">
-        <video autoplay class="video" preload="auto" loop>
-            <source src="/videos/video-main.mp4" type="video/mp4" />
-        </video>
-        <div class="info-box">
-            <h1 class="title">Základom úspechu je náš tím. Gro tvoria skúsení stavební robotníci s bohatou praxou, na ktorých sa vždy môžeme spoľahnúť ako my, tak naši klienti.</h1>
-            <div class="flex-box">
-                <p>Nemenej dôležitou súčasťou sú odborníci na daňové, právne a administratívne záležitosti. Pri nadväzovaní spoluprác dbáme na to, aby naši pracovníci boli profesionálni, spoľahliví, dochvílni a stáli si za svojím slovom.</p>
-                <p>Aj vďaka skúsenému tímu za nami stojí množstvo úspešných projektov, aktuálne už viac než 89 stavieb v 6 krajinách. Ak čelíte náročnej výzve, stavebná firma PASUV stojí pri vás.</p>
-            </div>
-            <div class="sertificats">
+<Layout title={t("ktosme.site.title")} style="secondary">
+	<Hero
+		img="/hero-about-us.jpg"
+		title={t("ktosme.hero.title")}
+		subtitle={t("ktosme.hero.subtitle")}
+		content1={t("ktosme.hero.content1")}
+		content2={t("ktosme.hero.content2")}
+	/>
+	<section class="container">
+		<video autoplay class="video" preload="auto" loop>
+			<source src="/videos/video-about.mp4" type="video/mp4" />
+		</video>
+		<div class="info-box">
+			<h1 class="title">
+				{t("ktosme.info.title")}
+			</h1>
+			<div class="flex-box">
+				<p>
+					{t("ktosme.info.subtitle1")}
+				</p>
+				<p>
+					{t("ktosme.info.subtitle2")}
+				</p>
+			</div>
+			<div class="sertificats">
 				<div class="sertificats-item">
-					<span class="sertificats-separator"/>
-					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<span class="sertificats-separator"></span>
+					<Icon
+						name="TUV"
+						size={100}
+						style={{ alignSelf: "start" }}
+					/>
 					<span class="sertificats-subtitle">ISO 9001:2015</span>
 				</div>
 				<div class="sertificats-item">
-					<span class="sertificats-separator"/>
-					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<span class="sertificats-separator"></span>
+					<Icon
+						name="TUV"
+						size={100}
+						style={{ alignSelf: "start" }}
+					/>
 					<span class="sertificats-subtitle">ISO 14001:2015</span>
 				</div>
 				<div class="sertificats-item">
-					<span class="sertificats-separator"/>
-					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<span class="sertificats-separator"></span>
+					<Icon
+						name="TUV"
+						size={100}
+						style={{ alignSelf: "start" }}
+					/>
 					<span class="sertificats-subtitle">ISO 9001:2015</span>
 				</div>
 				<div class="sertificats-item">
-					<span class="sertificats-separator"/>
-					<Icon name="POS" size={100} style={{alignSelf: 'start'}}/>
-					<span class="sertificats-subtitle">Poistenie zodpovednosti proti škodám až do výšky<br/>2 500 000 €</span>
+					<span class="sertificats-separator"></span>
+					<Icon
+						name="POS"
+						size={100}
+						style={{ alignSelf: "start" }}
+					/>
+					<span class="sertificats-subtitle"
+						>{t("ktosme.info.sertificate")}<br />2
+						500 000 €</span
+					>
 				</div>
-				
-				
 			</div>
-        </div>
-    </section>
+		</div>
+	</section>
 </Layout>
 
 <style>
-    .container {
-        margin: auto;
-        margin-bottom: 240px;
-        margin-top: 120px;
-        max-width: 1440px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
-        gap: 240px;
-    }
-    .video {
-        width: 100%;
-    }
-    .video source {
-        width: 100%;
-    }
-    .info-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 2rem;
-        gap: 120px;
-    }
-    .flex-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 4rem;
-    }
-    .sertificats{
+	.container {
+		margin: auto;
+		margin-bottom: 120px;
+		max-width: 1440px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 1rem;
+		gap: 80px;
+	}
+	.video {
+		margin-top: 30px;
+		width: 100%;
+	}
+	.video source {
+		width: 100%;
+	}
+	.info-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		gap: 120px;
+	}
+	.flex-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 4rem;
+	}
+	.flex-box p {
+		flex: 1;
+	}
+	.sertificats {
 		margin-top: 2.5rem;
 		width: 100%;
 		display: grid;
@@ -95,8 +119,9 @@ import { Icon } from 'astro-icon/components'
 		place-content: start;
 		column-gap: 1rem;
 		row-gap: 3rem;
+		margin-bottom: 80px;
 	}
-	.sertificats-item{
+	.sertificats-item {
 		width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -104,28 +129,39 @@ import { Icon } from 'astro-icon/components'
 		justify-content: center;
 		gap: 1rem;
 	}
-	.sertificats-separator{
+	.sertificats-separator {
 		width: 90%;
 		height: 1px;
 		background-color: #000;
 	}
-	.sertificats-logo{
+	.sertificats-logo {
 		width: 34px;
 		height: auto;
 		object-fit: contain;
 		object-position: center;
 	}
-	.sertificats-subtitle{
+	.sertificats-subtitle {
 		width: 80%;
 		font-weight: 600;
 	}
-    @media (min-width: 768px) {
-        .sertificats{
-		    grid-template-columns: repeat(4, 1fr);
-	    }
-        .flex-box {
-            flex-direction: row;
-            gap: 2rem;
-        }
-    }
+	@media screen and (min-width: 768px) {
+		.container {
+			padding: 0 2rem;
+			margin-bottom: 240px;
+			gap: 120px
+		}
+		.sertificats {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		.flex-box {
+			flex-direction: row;
+			gap: 2rem;
+		}
+	}
+	@media screen and (min-width: 1024px){
+		.container {
+			gap: 240px;
+		}
+		
+	}
 </style>

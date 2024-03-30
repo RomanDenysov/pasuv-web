@@ -1,457 +1,681 @@
 ---
 import Button from "./ui/Button.astro";
+import ButtonFlip from "./ui/ButtonFlip.astro";
 
 interface HeaderProps {
-    style?: 'primary' | 'secondary';
+	style?: "primary" | "secondary";
 }
 
-const { style = 'primary' } = Astro.props as HeaderProps;
-
+const { style = "primary" } = Astro.props as HeaderProps;
 ---
-<header class={style==='primary' ? "header headerId" : 'header-white'}>
-    <div class="left-box">
-        <a href="/" class="logo-link">
-            {style=== 'primary' 
-                ? (<img src="/pasuv-logo.svg" alt="Logo" class="logo" />) 
-                : (<img src="/pasuv-logo-white.svg" alt="Logo" class="logo" />)
-            }
-            <img src="/pasuv-logo-white.svg" alt="Logo" class="logo-alter" />
-        </a>
-        <div class="lang-box">
-            <img src="/lang-select.svg" alt="Language" />
-            <select name="lang" id="lang" class="lang-select">
-                <option value="en" class="lang-item">English</option>
-                <option value="de" class="lang-item">German</option>
-                <option value="sk" class="lang-item">Slovak</option>
-            </select>
-        </div>
-    </div>
-    <nav class="mobile-nav">
-        <ul class="mobile-nav-list">
-            <li><a href="/">Domov</a></li>
-            <li><a href="/sluzby">Služby</a></li>
-            <li><a href="/referencie">Referencie</a></li>
-            <li><a href="/ktosme">Kto sme</a></li>
-        </ul>
-    </nav>
 
-    {style=== 'primary'
-        ? (<nav class="right-box">
-            <ul class="navbar" id="navbar">
-                <li class="underline-white"><a href="/">Domov</a></li>
-                <li class="underline-white"><a href="/sluzby">Služby</a></li>
-                <li class="underline-white"><a href="/referencie">Referencie</a></li>
-                <li class="underline-white"><a href="/ktosme">Kto sme</a></li>
-            </ul>
-            <div class="btn">
-                <Button body="Kontaktujte nás" size={'small'}/></div>
-            <div class="btn-blck">
-                <Button body="Kontaktujte nás" size={'small'} black/></div>
-        </nav>)
-        : (<nav class="right-box-secondary">
-            <ul class="navbar-secondary">
-                <li class="underline"><a href="/">Domov</a></li>
-                <li class="underline"><a href="/sluzby">Služby</a></li>
-                <li class="underline"><a href="/referencie">Referencie</a></li>
-                <li class="underline"><a href="/ktosme">Kto sme</a></li>
-            </ul>
-            <Button body="Kontaktujte nás" href="/kontakt" size={'small'} black/>
-        </nav>)
-    }
-    
+<header class={style === "primary" ? "header headerId" : "header-white"}>
+	<div class="container">
+		<div class="left-box">
+			<a href="/" class="logo-link">
+				{
+					style === "primary" ? (
+						<img src="/pasuv-logo.svg" alt="Logo" class="logo" />
+					) : (
+						<img
+							src="/pasuv-logo-white.svg"
+							alt="Logo"
+							class="logo"
+						/>
+					)
+				}
+				<img
+					src="/pasuv-logo-white.svg"
+					alt="Logo"
+					class="logo-alter"
+				/>
+			</a>
+			<!-- <div class="lang-box">
+                    <img src="/lang-select.svg" alt="Language" />
+                    <select name="lang" id="lang" class="lang-select">
+                        <option value="en" class="lang-item">English</option>
+                        <option value="de" class="lang-item">German</option>
+                        <option value="sk" class="lang-item">Slovak</option>
+                    </select>
+                </div> -->
+		</div>
+		{
+			style === "primary" ? (
+				<button class="mobile-btn">
+					<svg
+						class="black"
+						width="34"
+						height="30"
+						viewBox="0 0 28 22"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M0 17H23" stroke="white" stroke-width="2" />
+						<path d="M0 9H16" stroke="white" stroke-width="2" />
+						<path d="M0 1H30" stroke="white" stroke-width="2" />
+					</svg>
+				</button>
+			) : (
+				<button class="mobile-btn">
+					<svg
+						class="black"
+						width="34"
+						height="30"
+						viewBox="0 0 28 22"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M0 17H23" stroke="black" stroke-width="2" />
+						<path d="M0 9H16" stroke="black" stroke-width="2" />
+						<path d="M0 1H30" stroke="black" stroke-width="2" />
+					</svg>
+				</button>
+			)
+		}
+		<nav class="mobile-nav">
+			<img src="/pasuv-logo-white.svg" alt="Logo" class="mobile-logo" />
+			<button class="mobile-close-btn">
+				<img src="/Close.svg" alt="Close" />
+			</button>
+			<div class="mobile-nav-bar">
+				<ul class="mobile-nav-list">
+					<li class="mobile-nav-item"><a href="/">Domov</a></li>
+					<li class="mobile-nav-item">
+						<a href="/sluzby">Služby</a>
+					</li>
+					<li class="mobile-nav-item">
+						<a href="/referencie">Referencie</a>
+					</li>
+					<li class="mobile-nav-item">
+						<a href="/ktosme">Kto sme</a>
+					</li>
+					<li class="mobile-nav-item">
+						<a href="/kontakt"
+							>Kontaktujte nás
+							<svg
+								width="20"
+								height="20"
+								viewBox="0 0 20 20"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M19 1L1 19"
+									stroke="black"
+									stroke-width="2"></path>
+								<path
+									d="M3 1H19V17"
+									stroke="black"
+									stroke-width="2"></path>
+							</svg>
+						</a>
+					</li>
+				</ul>
+				<!-- <div class="mobile-lang-box">
+                        <img src="/lang-select.svg" alt="Language" />
+                        <select name="lang" id="lang" class="lang-select">
+                            <option value="en" class="lang-item">English</option>
+                            <option value="de" class="lang-item">German</option>
+                            <option value="sk" class="lang-item">Slovak</option>
+                        </select>
+                    </div> -->
+			</div>
+		</nav>
+
+		{
+			style === "primary" ? (
+				<nav class="right-box">
+					<ul class="navbar" id="navbar">
+						<li class="underline-white">
+							<a href="/">Domov</a>
+						</li>
+						<li class="underline-white">
+							<a href="/sluzby">Služby</a>
+						</li>
+						<li class="underline-white">
+							<a href="/referencie">Referencie</a>
+						</li>
+						<li class="underline-white">
+							<a href="/ktosme">Kto sme</a>
+						</li>
+					</ul>
+					<div class="btn">
+						<ButtonFlip
+							body="Kontaktujte nás"
+							href="/kontakt"
+							size={"small"}
+						/>
+					</div>
+					<div class="btn-blck">
+						<ButtonFlip
+							color="black"
+							body="Kontaktujte nás"
+							href="/kontakt"
+							size={"small"}
+						/>
+					</div>
+				</nav>
+			) : (
+				<nav class="right-box-secondary">
+					<ul class="navbar-secondary">
+						<li class="underline">
+							<a href="/">Domov</a>
+						</li>
+						<li class="underline">
+							<a href="/sluzby">Služby</a>
+						</li>
+						<li class="underline">
+							<a href="/referencie">Referencie</a>
+						</li>
+						<li class="underline">
+							<a href="/ktosme">Kto sme</a>
+						</li>
+					</ul>
+					<ButtonFlip
+						color="black"
+						body="Kontaktujte nás"
+						href="/kontakt"
+						size={"small"}
+					/>
+				</nav>
+			)
+		}
+	</div>
 </header>
-
 <style>
-    .logo-alter {
-        display: none;
-        width: 120px;
-        height: auto;
-        object-position: center;
-        object-fit: cover;
-    }
-    .btn-blck {
-        display: none;
-    }
-    .hidden{
-        display: none;
-    }
-    .display{
-        display: block;
-    }
-    .underline{
-        position: relative;
-    }
-    .underline::after{
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: black;
-        transform: scaleX(0);
-        transition: transform 0.3s;
-    }
-    .underline:hover::after{
-        transform: scaleX(1);
-    }
-    .underline-white{
-        position: relative;
-    }
-    .underline-white::after{
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: white;
-        transform: scaleX(0);
-        transition: transform 0.3s;
-    }
-    .underline-white:hover::after{
-        transform: scaleX(1);
-    }
-    .header{
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: transparent;
-        box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2rem 1rem;
-        max-height: 4rem;
-        z-index: 100;
-        opacity: 0;
-        transform: translateY(-100%);
-        transition: transform 0.3s;
-    }
-    .header-white{
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: white;
-        box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2rem 1rem;
-        max-height: 4rem;
-        z-index: 100;
-        opacity: 0;
-        transform: translateY(-100%);
-        transition: transform 0.3s;
-    }
-    .visible{
-        position: fixed;
-        top: 0;
-        transform: translateY(0);
-        opacity: 1;
-    }
-    .left-box{
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1rem;
-    }
-    .logo-link{
-        width: 120px;
-        height: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .logo{
-        width: 120px;
-        height: auto;
-        object-position: center;
-        object-fit: cover;
-    }
-    .lang-box {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 5px;
-    }
-    .lang-select{
-        --webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: none;
-        background-color: transparent;
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--gray-neutral);
-        cursor: pointer;
-        
-    }
-    .lang-select:focus{
-        outline: none;
-    }
-    .lang-select:active {
-        outline: none;
-    }
-    .lang-select option{
-        background-color: black;
-        color: var(--gray-neutral);
-        font-size: 10px;
-        font-weight: 600;
-        margin-top: 5px;
-        border: none;
-    }
-    .mobile-nav{
-        /* TODO: switch and make a normal menu */
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-        background-color: white;
-        z-index: 100;
-    }
+	.mobile-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		z-index: 1;
+		width: 34px;
+		height: 34px;
+	}
+	.lang-box {
+		display: none;
+	}
+	.black {
+		stroke: black;
+		z-index: 2;
+	}
+	.mobile-nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 1rem;
+		opacity: 0;
+		visibility: hidden;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: 1;
+		overflow: hidden;
+		transition: all 0.3s ease-in-out;
+	}
+	.mobile-show {
+		opacity: 1;
+		visibility: visible;
+	}
+	.mobile-show .mobile-nav-bar {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+	.mobile-logo {
+		position: absolute;
+		top: 0.75rem;
+		left: 1rem;
+		width: 120px;
+		height: auto;
+		object-position: center;
+		object-fit: cover;
+		z-index: 11;
+	}
+	.mobile-close-btn {
+		position: absolute;
+		top: 1.25rem;
+		right: 1rem;
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+		z-index: 11;
+		width: 32px;
+		height: 32px;
+	}
+	.mobile-nav-bar {
+		padding: 6rem 2rem 1rem 2rem;
+		width: 100vw;
+		height: 80vh;
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		transform: translateY(-100%);
+		opacity: 1;
+		transition: all 0.3s ease-in-out;
+		visibility: hidden;
+		z-index: 10;
+		user-select: none;
+	}
+	.mobile-nav-list {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+	}
+	.mobile-nav-item {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		font-size: 32px;
+		font-weight: 500;
+		line-height: 1.25;
+	}
+	.mobile-nav-item a {
+		text-decoration: none;
+		color: var(--gray-darkest);
+	}
+	.mobile-lang-box {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		border: none;
+		gap: 5px;
+		outline: none;
+	}
+	.mobile-lang-box select {
+		border: none;
+	}
+	.mobile-lang-box:focus {
+		outline: none;
+	}
+	.logo-alter {
+		display: none;
+		width: 120px;
+		height: auto;
+		object-position: center;
+		object-fit: cover;
+	}
+	.btn-blck {
+		display: none;
+	}
+	.hidden {
+		display: none;
+	}
+	.display {
+		display: block;
+	}
+	.container {
+		position: absolute;
+		max-width: 1440px;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+		height: 100%;
+		padding: 2rem 1rem;
+		max-height: 4rem;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
+	.header {
+		position: absolute;
+		top: 0;
+		margin: auto;
+		max-width: 100%;
+		width: 100%;
+		background-color: transparent;
+		/* box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.1); */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 100;
+		min-height: 4rem;
+		opacity: 0;
+		transform: translateY(-100%);
+		transition: all 0.4s 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	.header-white {
+		position: absolute;
+		top: 0;
+		margin: auto;
+		max-width: 100%;
+		width: 100%;
+		background-color: white;
+		box-shadow: 0 8px 96px 0 rgba(0, 0, 0, 0.04);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 4rem;
+		z-index: 100;
+		opacity: 0;
+		transform: translateY(-100%);
+		transition: all 0.4s 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+	}
+	.visible {
+		position: fixed;
+		top: 0;
+		transform: translateY(0);
+		opacity: 1;
+	}
+	.left-box {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 1rem;
+	}
+	.logo-link {
+		width: 120px;
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.logo {
+		width: 120px;
+		height: auto;
+		object-position: center;
+		object-fit: cover;
+	}
 
+	.right-box {
+		display: none;
+	}
+	.right-box-secondary {
+		display: none;
+	}
 
-    .right-box{
-        display: none;
-    }
-    .right-box-secondary{
-        display: none;
-    }
-    
+	/* TODO:   check needence of navbar here */
+	.navbar {
+		text-decoration: none;
+		list-style: none;
 
-/* TODO:   check needence of navbar here */
-    .navbar{
-        text-decoration: none;
-        list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 2rem;
+	}
+	.navbar li {
+		display: flex;
+		align-items: center;
+	}
+	.navbar li a {
+		text-decoration: none;
+		list-style: none;
+		color: var(--gray-lightest);
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 24px;
+		word-wrap: nowrap;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.navbar li a:hover {
+		color: white;
+	}
+	.navbar-secondary {
+		text-decoration: none;
+		list-style: none;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-    }
-    .navbar li{
-        display: flex;
-        align-items: center;
-    }
-    .navbar li a{
-        text-decoration: none;
-        list-style: none;
-        color: var(--gray-lightest);
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 24px;
-    }
-    .navbar li a:hover{
-        color: white;
-    }
-    .navbar-secondary{
-        text-decoration: none;
-        list-style: none;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 2rem;
+	}
+	.navbar-secondary li {
+		display: flex;
+		align-items: center;
+	}
+	.navbar-secondary li a {
+		text-decoration: none;
+		list-style: none;
+		color: var(--gray-lightest);
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 24px;
+		word-wrap: nowrap;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-    }
-    .navbar-secondary li{
-        display: flex;
-        align-items: center;
-    }
-    .navbar-secondary li a{
-        text-decoration: none;
-        list-style: none;
-        color: var(--gray-dark);
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 24px;
-    }
-    .navbar-secondary li a:hover{
-        color: black;
-    }
-        
+	@media screen and (min-width: 768px) {
+		.mobile-logo {
+			left: 2rem;
+		}
+		.mobile-close-btn {
+			right: 2rem;
+		}
+		.container {
+			padding: 2rem;
+		}
+		.header {
+			max-width: 100vw;
+			top: 0;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			min-height: 4rem;
+			align-items: center;
+			z-index: 100;
+		}
+		.header-white {
+			max-width: 100vw;
+			top: 0;
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			min-height: 4rem;
+			align-items: center;
+			z-index: 100;
+		}
+		.left-box {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 2rem;
+		}
+	}
+	@media screen and (min-width: 992px) {
+		.lang-box {
+			display: flex;
+			align-items: center;
+		}
+		.lang-select {
+			--webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border: none;
+			background-color: transparent;
+			font-size: 16px;
+			font-weight: 600;
+			color: var(--gray-neutral);
+			cursor: pointer;
+		}
+		.lang-select:focus {
+			outline: none;
+		}
+		.lang-select:active {
+			outline: none;
+		}
+		.lang-select option {
+			background-color: black;
+			color: var(--gray-neutral);
+			font-size: 16px;
+			line-height: 24px;
+			margin-top: 5px;
+			border: none;
+		}
+		.mobile-btn {
+			display: none;
+		}
+		.right-box {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 2rem;
+		}
+		.right-box-secondary {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 2rem;
+			color: var(--gray-neutral);
+		}
+		.navbar {
+			text-decoration: none;
+			list-style: none;
 
-    @media screen and (min-width: 768px) {
-        .header{
-            max-width: 100vw;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            align-items: center;
-            padding: 2rem;
-            max-height: 4rem;
-            z-index: 100;
-        }
-        .header-white{
-            max-width: 100vw;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            align-items: center;
-            padding: 2rem;
-            max-height: 4rem;
-            z-index: 100;
-        }
-        .left-box{
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 2rem;
-        }
-        .lang-box {
-            display: flex;
-            align-items: center;
-        }
-        .lang-select{
-            --webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border: none;
-            background-color: transparent;
-            font-size: 16px;
-            font-weight: 600;
-            color: var(--gray-neutral);
-            cursor: pointer;
-            
-        }
-        .lang-select:focus{
-            outline: none;
-        }
-        .lang-select:active {
-            outline: none;
-        }
-        .lang-select option{
-            background-color: black;
-            color: var(--gray-neutral);
-            font-size: 16px;
-            line-height: 24px;
-            margin-top: 5px;
-            border: none;
-        }
-       
-    }
-    @media screen and (min-width: 992px){
-        .right-box{
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 2rem;
-        }
-        .right-box-secondary{
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 2rem;
-            color: var(--gray-neutral);
-        }   
-        .navbar{
-            text-decoration: none;
-            list-style: none;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 2rem;
+		}
+		.navbar li {
+			display: flex;
+			align-items: center;
+		}
+		.navbar li a {
+			text-decoration: none;
+			list-style: none;
+			color: var(--gray-lightest);
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 24px;
+			transition: all 0.3s 0.1s ease-in-out;
+		}
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-        }
-        .navbar li{
-            display: flex;
-            align-items: center;
-        }
-        .navbar li a{
-            text-decoration: none;
-            list-style: none;
-            color: var(--gray-lightest);
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 24px;
-        }
-        .navbar-secondary{
-            text-decoration: none;
-            list-style: none;
+		.navbar:hover li a {
+			color: var(--gray-dark);
+		}
+		.navbar li a:hover {
+			color: var(--gray-lightest);
+		}
 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 2rem;
-        }
-        .navbar-secondary li{
-            display: flex;
-            align-items: center;
-        }
-        .navbar-secondary li a{
-            text-decoration: none;
-            list-style: none;
-            color: var(--gray-dark);
-            font-size: 16px;
-            font-weight: 600;
-            line-height: 24px;
-        } 
-    }
-    
+		.navbar-secondary {
+			text-decoration: none;
+			list-style: none;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 2rem;
+		}
+		.navbar-secondary li {
+			display: flex;
+			align-items: center;
+		}
+		.navbar-secondary li a {
+			text-decoration: none;
+			list-style: none;
+			color: var(--gray-dark);
+			font-size: 16px;
+			font-weight: 600;
+			line-height: 24px;
+			transition: all 0.3s 0.1s ease-in-out;
+		}
+		.navbar-secondary:hover li a {
+			color: var(--gray-lightest);
+		}
+		.navbar-secondary li a:hover {
+			color: var(--gray-dark);
+		}
+	}
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    let lastScroll = 10;
+	document.addEventListener("DOMContentLoaded", () => {
+		let lastScroll = 100;
 
-    const header = document.querySelector('header');
-    const headerId = document.querySelector('.headerId');
-    const navbar = document.querySelector('#navbar');
-    const rightBox = document.querySelector('#right-box');
-    const logo = document.querySelector('.logo');
-    const logoAlt = document.querySelector('.logo-alter');
-    const btn = document.querySelector('.btn');
-    const btnBlck = document.querySelector('.btn-blck');
-    const line = document.querySelectorAll('.underline-white');
+		const header = document.querySelector("header");
+		const headerId = document.querySelector(".headerId");
+		const navbar = document.querySelector("#navbar");
+		const rightBox = document.querySelector("#right-box");
+		const logo = document.querySelector(".logo");
+		const logoAlt = document.querySelector(".logo-alter");
+		const btn = document.querySelector(".btn");
+		const btnBlck = document.querySelector(".btn-blck");
+		const line = document.querySelectorAll(".underline-white");
+		const svgPath = document.querySelectorAll("path");
 
-    const checkScroll = () => {
-        if (window.scrollY > lastScroll && window.scrollY > 100) {
-            header?.classList.remove('visible');
-        } else {
-            header?.classList.add('visible');
-        }
-        lastScroll = window.scrollY;
-    };
-    const checkWhite = () => {
-        if(window.scrollY > 300){
-            
-            headerId?.classList.add('header-white');
-            navbar?.classList.add('navbar-secondary');
-            rightBox?.classList.add('right-box-secondary');
-            logo?.classList.add('hidden');
-            logoAlt?.classList.add('display');
-            btn?.classList.add('hidden');
-            btnBlck?.classList.add('display');
-            
-            line && line.forEach((el) => {
-                el.classList.remove('underline-white');
-                el.classList.add('underline');
-            });
-        } else {
-            headerId?.classList.remove('header-white');
-            navbar?.classList.remove('navbar-secondary');
-            rightBox?.classList.remove('right-box-secondary');
-            logo?.classList.remove('hidden');
-            logoAlt?.classList.remove('display');
-            btn?.classList.remove('hidden');
-            btnBlck?.classList.remove('display');
+		const mobileBtn = document.querySelector(".mobile-btn");
+		const mobileNav = document.querySelector(".mobile-nav");
 
-            line && line.forEach((el) => {
-                el.classList.remove('underline');
-                el.classList.add('underline-white');
-            });
-        }
-    
-    }
+		const mobileCloseBtn = document.querySelector(".mobile-close-btn");
 
-    checkScroll();
-    checkWhite()
+		mobileBtn?.addEventListener("click", () => {
+			document.body.style.overflowY = "hidden";
+			window.scrollTo(0, 0);
 
-    window.addEventListener('scroll', checkScroll);
-    window.addEventListener('scroll', checkWhite);
-});
+			mobileNav?.classList.add("mobile-show");
+		});
+		mobileCloseBtn?.addEventListener("click", () => {
+			document.body.style.overflowY = "auto";
+			window.scrollTo(0, 0);
 
+			mobileNav?.classList.remove("mobile-show");
+		});
+
+		const checkScroll = () => {
+			if (window.scrollY > lastScroll && window.scrollY > 300) {
+				header?.classList.remove("visible");
+			} else {
+				header?.classList.add("visible");
+			}
+			lastScroll = window.scrollY;
+		};
+		const checkWhite = () => {
+			if (window.scrollY > 300) {
+				headerId?.classList.add("header-white");
+				navbar?.classList.add("navbar-secondary");
+				rightBox?.classList.add("right-box-secondary");
+				logo?.classList.add("hidden");
+				logoAlt?.classList.add("display");
+				btn?.classList.add("hidden");
+				btnBlck?.classList.add("display");
+
+				line &&
+					line.forEach((el) => {
+						el.classList.remove("underline-white");
+						el.classList.add("underline");
+					});
+				svgPath &&
+					svgPath.forEach((el) => {
+						el.classList.add("black");
+					});
+			} else {
+				headerId?.classList.remove("header-white");
+				navbar?.classList.remove("navbar-secondary");
+				rightBox?.classList.remove("right-box-secondary");
+				logo?.classList.remove("hidden");
+				logoAlt?.classList.remove("display");
+				btn?.classList.remove("hidden");
+				btnBlck?.classList.remove("display");
+
+				line &&
+					line.forEach((el) => {
+						el.classList.remove("underline");
+						el.classList.add("underline-white");
+					});
+				svgPath &&
+					svgPath.forEach((el) => {
+						el.classList.remove("black");
+					});
+			}
+		};
+
+		checkScroll();
+		checkWhite();
+
+		window.addEventListener("scroll", checkScroll);
+		window.addEventListener("scroll", checkWhite);
+	});
 </script>

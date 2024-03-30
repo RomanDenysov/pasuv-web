@@ -4,6 +4,7 @@ const {id, city, year, title, img } = Astro.props;
 ---
 
 <li class="accordion">
+    <span class="line"/>
     <div class="top">
         <span class="city">{city}</span>
         <span class="year">{year}</span>
@@ -12,7 +13,6 @@ const {id, city, year, title, img } = Astro.props;
     <div  id={id} class="bottom">
         <img src={img} alt=`${title} referencia` class="img">
     </div>
-    <span class="line"/>
 </li>
 
 <style>
@@ -63,7 +63,7 @@ const {id, city, year, title, img } = Astro.props;
     .line {
         width: 100%;
         height: 1px;
-        margin-top: 1rem;
+        margin-top: 0;
         background-color: black;
     }
     .bottom {
@@ -78,8 +78,11 @@ const {id, city, year, title, img } = Astro.props;
         transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
     .img {
-        width: 100%;
-        height: auto;
+        margin-top: 36px;
+        margin-bottom: 12px;
+        aspect-ratio: 16 / 9;
+        width: 50%;
+        height: 510px;
         object-fit: cover;
         object-position: center;
     }
@@ -95,6 +98,7 @@ const {id, city, year, title, img } = Astro.props;
     @media screen and (min-width: 768px){
         .img {
             max-width: 760px;
+            aspect-ratio: 16 / 9;
             height: 510px;
             object-fit: cover;
             object-position: center;

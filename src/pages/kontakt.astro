@@ -3,157 +3,158 @@ import Hero from "../components/Hero.astro";
 import Form from "../components/Form.astro";
 import Divider from "../components/ui/Divider.astro";
 import Layout from "../layouts/Layout.astro";
-import { Icon } from 'astro-icon/components'
-
-
+import { t } from "i18next";
 ---
 
-<Layout title="Referencie" style="secondary">
-    <Hero
-        img="/hero-contact.jpg"
-        title="Patríme k popredným dodávateľom prác v Nemecku, ale aj v celej EÚ"
-        subtitle="Kto sme"
-        content1="V prípade záujmu o spoluprácu alebo ďalšie informácie nás neváhajte kontaktovať vami preferovanou formou."
-    />
-    <section class="container">
-        <Divider title="Kontaktné a fakturačné údaje"/>
-        <div class="info-box">
-            <div class="info-item">
-                <div class="current-box">
-                    <h2>info@pasuv.de</h2>
-                    <h3>Odpovedáme najneskôr do 2 pracovných dní</h3>
-                </div>
-                <div class="current-box">
-                    <h2>+421 900 000 000</h2>
-                    <h3>V pracovných dňoch 8.00 – 16.00</h3>
-                   
-                </div>
-            </div>
-            <div class="info-item">
-                <div class="current-box">
-                    <h2>Praha</h2>
-                    <h3>Ulica 00000/00<br/>Mesto<br/>Krajina</h3>
-                    <a href="#"><span>Zobraziť na mape</span></a>
-                    <h3>IČO: 00000000
-                        <br/>
-                        DIČ/IČ DPH: SK0000000000
-                    </h3>
-                    <p>Spoločnosť je zapísaná v obchodnom registri Okresného súdu Bratislava I, Oddiel: Sro, Vložka č.: 000000/B</p>
-                </div>
-                <div class="current-box">
-                    <h2>Praha</h2>
-                    <h3>Ulica 00000/00<br/>Mesto<br/>Krajina</h3>
-                    <a href="#"><span>Zobraziť na mape</span></a>
-                    <h3>IČO: 00000000
-                        <br/>
-                        DIČ/IČ DPH: SK0000000000
-                    </h3>
-                    <p>Spoločnosť je zapísaná v obchodnom registri Okresného súdu Bratislava I, Oddiel: Sro, Vložka č.: 000000/B</p>
-                </div>
-            </div>
-            <div class="info-item">
-                <div class="current-box">
-                    <h2>Sledujte nás</h2>
-                    <a href="#"><h3>LinkedIn</h3></a>
-                </div>
-                <div class="current-box">
-                    <h2>Na stiahnutie</h2>
-                    <a href="#"><h3>Katalóg v PDF</h3></a>
-                </div>
-            </div>
-            
-        </div>
-        <img  class="video"  src="/content-ead.jpg">
-        
-        <Form/>
-       
-    </section>
+<Layout title={t("kontakt.site.title")} style="secondary">
+	<Hero
+		img="/hero-contact.jpg"
+		title={t("kontakt.hero.title")}
+		subtitle={t("kontakt.hero.subtitle")}
+		content1={t("kontakt.hero.content1")}
+	/>
+	<section class="container">
+		<Divider title={t("kontakt.info.devider")} />
+		<div class="info-box">
+			<div class="info-item">
+				<div class="current-box">
+					<h2>info@pasuv.de</h2>
+					<h3>{t("kontakt.info.text1")}</h3>
+				</div>
+				<div class="current-box">
+					<h2>+421 900 000 000</h2>
+					<h3>{t("kontakt.info.text2")} 8.00 – 16.00</h3>
+				</div>
+			</div>
+			<div class="info-item">
+				<div class="current-box">
+					<h2>Praha</h2>
+					<h3>Ulica 00000/00<br />Mesto<br />Krajina</h3>
+					<a href="#"><span>{t("kontakt.info.text3")}</span></a>
+					<h3>
+						IČO: 00000000
+						<br />
+						DIČ/IČ DPH: SK0000000000
+					</h3>
+					<p>
+						{t("kontakt.info.text4")}
+					</p>
+				</div>
+				<div class="current-box">
+					<h2>Praha</h2>
+					<h3>Ulica 00000/00<br />Mesto<br />Krajina</h3>
+					<a href="#"><span>{t("kontakt.info.text3")}</span></a>
+					<h3>
+						IČO: 00000000
+						<br />
+						DIČ/IČ DPH: SK0000000000
+					</h3>
+					<p>
+						{t("kontakt.info.text4")}
+					</p>
+				</div>
+			</div>
+			<div class="info-item">
+				<div class="current-box">
+					<h2>{t("kontakt.info.text5")}</h2>
+					<a href="#"><h3>LinkedIn</h3></a>
+				</div>
+				<div class="current-box">
+					<h2>{t("kontakt.info.text6")}</h2>
+					<a href="#"><h3>{t("kontakt.info.text7")}</h3></a>
+				</div>
+			</div>
+		</div>
+		<img class="video" src="/content-ead.jpg" />
+
+		<Form />
+	</section>
 </Layout>
 
 <style>
-
-
-    .container {
-        margin: auto;
-        margin-bottom: 240px;
-        max-width: 1440px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
-    }
-    .video {
-        width: 100%;
-    }
-    .video source {
-        width: 100%;
-    }
-    .info-box {
-        margin: auto;
-        height: 100%;
-        max-width: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-end;
-        gap: 3rem;
-        margin-bottom: 240px;
-        padding: 0 1rem;
-    }
-    .info-item {
-        align-self: flex-end;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 2rem;
-    }
-    .info-item:last-child {
-        flex-direction: row;
-    }
-    .current-box {
-        flex: 1;
-        max-width: 420px;
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    .info-box h2 {
-        font-size: 32px;
-        font-weight: 400;
-        line-height: 40px;
-        color: black;
-    }
-    .info-box h3 {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 28px;
-        color: black;
-    }
-    .info-box p {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-        color: black;
-    }
-    a {
-        text-decoration: none;
-        color: black;
-    }
-    @media (min-width: 768px) {
-        .info-box {
-            padding: 0;
-        }
-        .info-item{
-            width: 70%;
-            flex-direction: row;
-        }
-    }
+	.container {
+		margin-top: -20px;
+		margin: auto;
+		margin-bottom: 240px;
+		max-width: 1440px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 1rem;
+	}
+	.video {
+		width: 100%;
+	}
+	.video source {
+		width: 100%;
+	}
+	.info-box {
+		margin: auto;
+		height: 100%;
+		max-width: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+		gap: 3rem;
+		margin-bottom: 240px;
+		padding: 0 1rem;
+	}
+	.info-item {
+		align-self: flex-end;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 2rem;
+	}
+	.info-item:last-child {
+		flex-direction: row;
+	}
+	.current-box {
+		flex: 1;
+		max-width: 420px;
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 20px;
+	}
+	.info-box h2 {
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 40px;
+		color: black;
+	}
+	.info-box h3 {
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 28px;
+		color: black;
+	}
+	.info-box p {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 20px;
+		color: black;
+	}
+	a {
+		text-decoration: none;
+		color: black;
+	}
+	@media (min-width: 768px) {
+		.info-box {
+			margin-top: 120px;
+			padding: 0;
+		}
+		.info-item {
+			width: 70%;
+			flex-direction: row;
+		}
+	}
 </style>

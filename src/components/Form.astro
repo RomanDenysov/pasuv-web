@@ -1,184 +1,295 @@
 ---
-
+import { t } from "i18next";
 ---
 
 <form action="">
-    <h1>
-        Máte otázky alebo záujem o spoluprácu? 
-        <br/>
-        Kontaktujte nás
-    </h1>
-    <label for="theme">Téma</label>
-    <select class="gray" name="theme" id="theme">
-        <option value="0" selected disabled>Zvoľte tému správy</option>
-        <option value="spolupraca">Záujem o spoluprácu</option>
-        <option value="cena">Cenová ponuka</option>
-        <option value="otazky">Otázky a dopyty</option>
-        <option value="info">Všeobecné informácie</option>
-        <option value="reklama">Marketing a reklama</option>
-    </select>
-    <label  for="meno">Meno</label>
-    <input class="gray" type="text" name="meno" id="meno" placeholder="Zadajte vaše meno">
-    <label for="email">E-mail</label>
-    <input class="gray" type="email" name="email" id="email" placeholder="Zadajte váš e-mail">
-    <label for="phone">Telefón</label>
-    <input class="gray" type="text" name="phone" id="phone" placeholder="Zadajte vaše telefónne číslo">
-    <label for="message">Správa</label>
-    <textarea class="gray" name="message" id="message" placeholder="Zadajte text správy"/>
-    <div class="flex-box">
-        <span>Beriem na vedomie, že moje osobné údaje budú spracovávané za účelom komunikácie týkajúcej sa možnej spolupráce alebo uzatvorenia zmluvy. Bližšie informácie nájdete v <a href="#">zásadách spracovania osobných údajov.</a></span>
-        <button type="submit" value="Odoslať" class="btn-primary">
-            Odoslať
-           
-            <svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 7.5H17.5" stroke="#93BF3E" stroke-width="2"/>
-            <path d="M11 1L17.5 7.5L11 14" stroke="#93BF3E" stroke-width="2"/>
-            </svg>
-            
-        </button>
-    </div>
+	<h1>
+		{t("form.title1")}
+		<br />
+		{t("form.title2")}
+	</h1>
+	<label for="theme">{t("form.theme")}</label>
+	<select class="gray" name="theme" id="theme">
+		<option value="0" selected disabled>{t("form.option1")}</option>
+		<option value="spolupraca">{t("form.option2")}</option>
+		<option value="cena">{t("form.option3")}</option>
+		<option value="otazky">{t("form.option4")}</option>
+		<option value="info">{t("form.option5")}</option>
+		<option value="reklama">{t("form.option6")}</option>
+	</select>
+	<label for="meno">{t("form.name")}</label>
+	<input
+		class="gray"
+		type="text"
+		name="meno"
+		id="meno"
+		placeholder={t("form.namePlaceholder")}
+	/>
+	<label for="email">{t("form.email")}</label>
+	<input
+		class="gray"
+		type="email"
+		name="email"
+		id="email"
+		placeholder={t("form.emailPlaceholder")}
+	/>
+	<label for="phone">{t("form.phone")}</label>
+	<input
+		class="gray"
+		type="text"
+		name="phone"
+		id="phone"
+		placeholder={t("form.phonePlaceholder")}
+	/>
+	<label for="message">{t("form.message")}</label>
+	<textarea
+		class="gray"
+		name="message"
+		id="message"
+		placeholder={t("form.messagePlaceholder")}></textarea>
+	<div class="flex-box">
+		<span>{t("form.info")}{" "}<a href="#">{t("form.link")}</a></span>
+		<button class="button btn-black">
+			<span class="transparent ts" aria-hidden="true">
+				<p class="ts">{t("form.button")}</p>
+				<svg
+					width="19"
+					height="15"
+					viewBox="0 0 19 15"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path d="M0 7.5H17.5" stroke="transparent" stroke-width="2"
+					></path>
+					<path
+						d="M11 1L17.5 7.5L11 14"
+						stroke="transparent"
+						stroke-width="2"></path>
+				</svg>
+			</span>
+			<div class:list={["btn-front", "btn-front-black"]}>
+				<span class:list={["btn-text"]}>
+					{t("form.button")}
+					<svg
+						width="19"
+						height="15"
+						viewBox="0 0 19 15"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M0 7.5H17.5" stroke="#93BF3E" stroke-width="2"
+						></path>
+						<path
+							d="M11 1L17.5 7.5L11 14"
+							stroke="#93BF3E"
+							stroke-width="2"></path>
+					</svg>
+				</span>
+			</div>
+			<div class:list={["btn-back", "btn-front-black"]}>
+				<span class:list={["btn-text btn-back-black"]}>
+					{t("form.button")}
+					<svg
+						width="19"
+						height="15"
+						viewBox="0 0 19 15"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M0 7.5H17.5" stroke="white" stroke-width="2"
+						></path>
+						<path
+							d="M11 1L17.5 7.5L11 14"
+							stroke="white"
+							stroke-width="2"></path>
+					</svg>
+				</span>
+			</div>
+		</button>
+	</div>
 </form>
 
 <style>
-    .gray::placeholder {
-        color: var(--gray-neutral) !important;
-        font-size: 20px;
-        font-weight: 500;
-        font-family: "Chakra Petch", sans-serif;
-        font-style: normal;
-    }
-    form {
-        max-width: 100%;
-        margin: 0 auto;
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0 4rem;
-    }
-    h1{
-        margin-bottom: 120px;
-    }
-    label {
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 400;
-        color: #000;
-        margin-bottom: 8px;
-    }
-    select, input, textarea {
-        outline: none;
-        border: none;
-        width: 100%;
-        height: auto;
-        padding-top: 8px;
-        padding-bottom: 1rem;
-        margin-bottom: 56px;
-        border-bottom: 1px solid var(--gray-neutral) !important;
-        color: var(--gray-darkest);
-        font-size: 20px;
-        font-weight: 500;
-        font-family: "Chakra Petch", sans-serif;
+	.gray::placeholder {
+		color: var(--gray-neutral) !important;
+		font-size: 20px;
+		font-weight: 500;
+		font-family: "Chakra Petch", sans-serif;
 		font-style: normal;
-        resize: none;
-        scrollbar-width: none;
-    }
-    option {
-        color: var(--gray-darkest);
-        font-size: 20px;
-        font-weight: 500;
-        font-family: "Chakra Petch", sans-serif;
-        font-style: normal;
-        background-color: var(--gray-lightest);
-        margin: 10px 0;
-    }
-    select {
-        cursor: pointer;
-        color: var(--gray-darkest);
-        display: flex;
-        align-items: start;
-        justify-content: start;
-        gap: 10px;
-        -webkit-appearance: none;
-        width: 100%;
-        position: relative;
-    }
-    .flex-box{
-        margin-top: 180px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        gap: 2rem;
-    }
-    .flex-box span {
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 400;
-        color: var(--gray-neutral);
-    }
-    .btn-primary{
-        align-self: center;
-        font-family: "Chakra Petch", sans-serif;
+	}
+	form {
+		max-width: 100%;
+		margin: 240px auto;
+		margin-bottom: 140px;
+		width: 100%;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0 4rem;
+	}
+	h1 {
+		margin-bottom: 120px;
+	}
+	label {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+		color: #000;
+		margin-bottom: 8px;
+	}
+	select,
+	input,
+	textarea {
+		outline: none;
+		border: none;
+		width: 100%;
+		height: auto;
+		padding-top: 8px;
+		padding-bottom: 1rem;
+		margin-bottom: 56px;
+		border-bottom: 1px solid var(--gray-neutral) !important;
+		color: var(--gray-darkest);
+		font-size: 20px;
+		font-weight: 500;
+		font-family: "Chakra Petch", sans-serif;
 		font-style: normal;
+		resize: none;
+		scrollbar-width: none;
+	}
+	option {
+		color: var(--gray-darkest);
+		font-size: 20px;
+		font-weight: 500;
+		font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+		background-color: var(--gray-lightest);
+		margin: 10px 0;
+	}
+	select {
+		cursor: pointer;
+		color: var(--gray-darkest);
+		display: flex;
+		align-items: start;
+		justify-content: start;
+		gap: 10px;
+		-webkit-appearance: none;
+		width: 100%;
+		position: relative;
+	}
+	.flex-box {
+		margin-top: 180px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		gap: 2rem;
+	}
+	.flex-box span {
+		font-size: 14px;
+		line-height: 20px;
+		font-weight: 400;
+		color: var(--gray-neutral);
+	}
 
-        text-decoration: none;
-        height: 75px;
-        width: 150px;
-        background-color: transparent;
-        border: 1px solid var(--gray-neutral);
-        border-radius: 38px;
-        padding-left: 20px;
-        padding-right: 20px;
+	a {
+		color: var(--gray-neutral);
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		text-decoration: underline;
+	}
+	.button {
+		border-radius: 38px;
+		padding: 12px 8px;
+		border: 1px solid lightgray;
+		background-color: transparent;
+		cursor: pointer;
+		perspective: 1000px;
+		transition: all 0.5s 0.1s cubic-bezier(0.2, 0.05, 0.35, 0.25);
+		color: transparent;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        font-weight: 500;
-		
-        font-size: 20px;
-        line-height: 28px;
-        color: var(--green);
+		font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+		font-size: 20px;
+		line-height: 28px;
+		text-transform: uppercase;
+	}
+	.button p {
+		text-transform: uppercase;
+		font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+		font-size: 20px;
+		line-height: 28px;
+	}
+	.ts {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		color: transparent;
+	}
+	.transparent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		color: transparent;
+		text-transform: uppercase;
+		z-index: 0;
+	}
+	.btn-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		color: transparent;
+		text-transform: uppercase;
+	}
+	.btn-front,
+	.btn-back {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+		transition: transform 0.5s 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+	}
+	.btn-text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 
-        transition: all 0.5s 0.1s ease-in-out;
-        cursor: pointer;
-        position: relative;
-    }
-    .btn-primary::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0; 
-        left: 0;
-        margin: auto;
-        clip-path: circle(0% at 50% 50%);
-        transition: all 0.5s 0.1s ease-in-out;
-        border-radius: 38px;
-        background-color: var(--green);
-        z-index: -1;
-        border: none;
-    }
-    .btn-primary:hover::before {
-        clip-path: circle(100% at 50% 50%);
-    }
-    .btn-primary:is(:hover, :focus-within) {
+		font-size: 20px;
+		font-weight: 500;
+		white-space: nowrap;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		z-index: 2;
+	}
+	.btn-back {
+		transform: translateY(100%) rotateX(180deg);
+	}
+	button:hover .btn-front {
+		transform: translateY(-100%) rotateX(180deg);
+	}
+	button:hover .btn-back {
+		color: white;
+		transform: translateY(0) rotateX(0);
+	}
+	button:hover .btn-front-black {
 		color: white;
 	}
-    svg path {
-        transition: all 0.5s 0.1s ease-in-out;
-    }
-    .btn-primary:is(:hover, :focus-within) svg path {
-        stroke: white;
-    }
-    a {
-        color: var(--gray-neutral);
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 20px;
-        text-decoration: underline;
-    }
+	button:hover {
+		background-color: var(--green);
+	}
+	button:hover .btn-back-black {
+		color: white;
+	}
 </style>

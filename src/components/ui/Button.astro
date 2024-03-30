@@ -2,20 +2,18 @@
 interface Props {
 	body: string;
 	href?: string;
-    external?: boolean;
     size?: 'small' | 'medium' | 'large';
     green?: boolean;
     footer?: boolean;
     black?: boolean;
 }
 
-const { href, body, external = false, size = 'medium', green = false, footer = false, black=false } = Astro.props as Props;
+const { href, body, size = 'medium', green = false, footer = false, black=false } = Astro.props as Props;
 
 ---
 
-{href ? (
-    external ? (
-        <a href={href} rel="noopener noreferrer" target="_blank" class="link">
+{href 
+    ? (<a href={href} class="link">
             <button class:list={["button", size, {green: green}, {footer: footer}, {black: black}]}>
                 {body}
                 <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,26 +21,16 @@ const { href, body, external = false, size = 'medium', green = false, footer = f
                     <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
                 </svg>
             </button>
-        </a>)  : (
-        <a href={href} class="link">
-            <button class:list={["button", size, {green: green}, {footer: footer}, {black: black}]}>
-                {body}
-                <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M68 20L19 69" stroke="white" stroke-width="8"/>
-                    <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
-                </svg>
-            </button>
-        </a>)
-        ) : (
-    <button class:list={["button", size, {green: green}, {footer: footer}, {black: black}]}>
+        </a>) 
+    : (<button class:list={["button", size, {green: green}, {footer: footer}, {black: black}]}>
         {body}
         <svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M68 20L19 69" stroke="white" stroke-width="8"/>
             <path d="M28 20H68V60" stroke="white" stroke-width="8"/>
         </svg>
 
-    </button>
-)}
+    </button>)
+}
 
 <style>
 	.button {
@@ -54,7 +42,7 @@ const { href, body, external = false, size = 'medium', green = false, footer = f
         height: 78px;
         width: 337px;
         background-color: transparent;
-        border: 1px solid white;
+        border: 1px solid rgba(255, 255, 255, 0.32);
         border-radius: 38px;
 
         display: flex;
@@ -100,11 +88,12 @@ const { href, body, external = false, size = 'medium', green = false, footer = f
         min-height: 80px;
         max-width: max-content;
         width: 100%;
-        padding: 20px 40px;
-        font-size: 24px;
+        padding: 24px 24px;
+        font-size: 20px;
         line-height: 28px;
         font-weight: 500;
         z-index: 1;
+        gap: 12px;
     }
     .button.large svg {
         width: 24px;

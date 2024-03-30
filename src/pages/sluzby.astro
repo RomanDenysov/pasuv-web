@@ -1,197 +1,309 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Avatars from '../components/ui/Avatars.astro';
-import Divider from '../components/ui/Divider.astro';
-import Hero from '../components/Hero.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Avatars from "../components/ui/Avatars.astro";
+import Divider from "../components/ui/Divider.astro";
+import Hero from "../components/Hero.astro";
+import { t } from "i18next";
 
 const sluzbyList = [
-    {   
-        id: 1,
-        title: 'Úvodné stretnutie',
-        content: 'Predstavíte nám svoj projekt a požiadavky'
-    },
-    {
-        id: 2,
-        title: 'Dohoda na podmienkach',
-        content: 'Dohodneme kompletné podmienky spolupráce'
-    },
-    {
-        id: 3,
-        title: 'Podpis zmlúv',
-        content: 'Podpíšeme zmluvy, postaráme sa o dokumentáciu'
-    },
-    {
-        id: 4,
-        title: 'Výber tímu',
-        content: 'Vyberieme tých najvhodnejších profesionálov'
-    },
-    {
-        id: 5,
-        title: 'Vyslanie pracovníkov',
-        content: 'Naši skúsení stavební robotníci cestujú na váš projekt'
-    }
-]
-
+	{
+		id: 1,
+		title: t("sluzby.subinfo.item1"),
+		content: t("sluzby.subinfo.content1"),
+	},
+	{
+		id: 2,
+		title: t("sluzby.subinfo.item2"),
+		content: t("sluzby.subinfo.content1"),
+	},
+	{
+		id: 3,
+		title: t("sluzby.subinfo.item3"),
+		content: t("sluzby.subinfo.content1"),
+	},
+	{
+		id: 4,
+		title: t("sluzby.subinfo.item4"),
+		content: t("sluzby.subinfo.content1"),
+	},
+	{
+		id: 5,
+		title: t("sluzby.subinfo.item5"),
+		content: t("sluzby.subinfo.content1"),
+	},
+];
 ---
 
-<Layout title="Welcome to Astro." style='secondary'>
-    
-    <Hero 
-        img="hero-services.jpg"
-        title="Spolupráca na pevných základoch"
-        subtitle="Služby"
-        content1=`Potrebujete kvalifikovaných a spoľahlivých robotníkov, ktorí za sebou majú bohaté skúsenosti? My vám ich dodáme v určený čas a v potrebnom počte. Ponúkame vám komplexné stavebné služby na priemyselných aj bytových projektoch, pri komerčnej aj občianskej výstavbe.`
-        
-        content2=`Ak sa rozhodnete pre spoluprácu s nami, získate stabilného partnera po celú dobu realizácie stavby aj na ďalšie projekty.`
-    />
+<Layout title={t("sluzby.site.title")} style="secondary">
+	<Hero
+		img="/hero-services.jpg"
+		title={t("sluzby.hero.title")}
+		subtitle={t("sluzby.hero.subtitle")}
+		content1={t("sluzby.hero.content1")}
+		content2={t("sluzby.hero.content2")}
+	/>
 
+	<section class="container">
+		<video autoplay class="video" preload="auto" loop>
+			<source src="/videos/video-about.mp4" type="video/mp4" />
+		</video>
+		<div class="flex-box">
+			<h1>
+				{t("sluzby.info.title")}
+			</h1>
+			<div class="left">
+				<p>
+					{t("sluzby.info.subtitle1")}
+					<br />
+					<br />
+					{t("sluzby.info.subtitle2")}
+				</p>
+				<Avatars column />
+			</div>
+		</div>
+	</section>
+	<section class="container">
+		<Divider title={t("sluzby.subinfo.devider")} />
+		<div class="box">
+			<h1 class="box-text">{t("sluzby.subinfo.title")}</h1>
 
-    <section class="container">
-        <video autoplay class="video" preload="auto" loop>
-            <source src="/videos/video-main.mp4" type="video/mp4" />
-        </video>
-        <div class="flex-box">
-            <h1>Na vaše projekty vysielame ucelené partie 2-3-4 skúsených stavebných pracovníkov. Počet a zloženie prispôsobíme vašim požiadavkám.</h1>
-            <div class="left">
-                <p>
-                    Dlhodobo spolupracujeme s profesionálnymi elektrikármi, murármi, vodoinštalatérmi a ďalšími stavebnými robotníkmi.
-                <br/> 
-                <br/> 
-                    Náš tím tvoria tiež špecialisti, ktorí sa postarajú o daňové a právne náležitosti, vrátane potrebnej administratívy.
-                </p>
-                <Avatars/>
-            </div>
-        </div>
-    </section>
-    <section class="container">
-        <Divider title={'Spolupráca'}/>
-        <div class="box">
-            <h1 class="box-text">Ako prebieha spolupráca?</h1>
-            <div class="box-bottom">
-                <ul class="sluzby-list">
-                    {sluzbyList.map((item) => (
-                        <li class="sluzby-item" >
-                        <div class="circle">
-                            <span>{item.id}</span>
-                        </div>
-                        <p>
-                            <b>{item.title} /</b>
-                            {item.content}
-                        </p>
-                    </li>
-                    ))
-                    }
-                </ul>
-            </div>
-        </div>
-
-    </section>
+			<div class="box-bottom">
+				<ul class="sluzby-list">
+					{
+						sluzbyList.map((item) => (
+							<li class="sluzby-item">
+								<div class="circle">
+									<span>{item.id}</span>
+								</div>
+								<p>
+									<b>{item.title} /</b>
+									{item.content}
+								</p>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+	</section>
 </Layout>
 
 <style>
-    .sluzby-list {
-        list-style: none;
-        width: 100%;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-    .sluzby-list::-webkit-scrollbar {
-        display: none;
-    }
+	.slider-button-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		margin-bottom: 2rem;
+		padding: 0 2rem;
+	}
+	button:disabled {
+		opacity: 0.5;
+		cursor: default;
+	}
+	.arrow {
+		width: 30px;
+		height: 30px;
+		background-color: transparent;
+		border: none;
+		position: relative;
+		cursor: pointer;
+	}
+	.arrow::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
 
-    .sluzby-item {
-        flex: 1;
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-    }
-    .sluzby-item p {
-        width: 500px;
-    }
-    .circle {
-        width: 76px;
-        height: 76px;
-        border-radius: 50%;
-        border: 1px solid black;
-        background-color: transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1rem;
-    }
+		width: 100%;
+		height: 100%;
+		border: none;
+		border-bottom: 4px solid var(--gray-dark);
+		border-left: 4px solid var(--gray-dark);
 
-    .container{
-        margin: auto;
-        margin-bottom: 240px;
-        margin-top: 120px;
-        max-width: 1440px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 1rem;
-        gap: 240px;
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+	#next::after {
+		border: none;
+		border-top: 4px solid var(--gray-dark);
+		border-right: 4px solid var(--gray-dark);
+	}
+	/* .arrow:hover::after {
+        border-color: black;
     }
-    .container:last-child {
-        margin-top: 0;
-        gap: 0;
-    }
-    .video {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-    .flex-box {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-    }
-    h1 {
-        flex: 1;
-    }
-    .left {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-    .box {
-        width: 100%;
-        height: 100%;
-        align-self: flex-start;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 2rem;
-    }
-    .box-bottom {
-        margin-top: 120px;
-        display: flex;
-        width: 100%;
-    }
-    @media screen and (min-width: 768px) {
-        .container{
-            padding: 0 2rem;
-        }
-        .flex-box {
-            flex-direction: row;
-            align-items: center;
-        }
-        .box-text {
-            width: 50%;
-        }
+    #next:hover::after {
+        border-color: black;
+    } */
+	.sluzby-list {
+		list-style: none;
+		width: 100%;
+		overflow-x: auto;
+		flex-wrap: nowrap;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1rem;
+		transition: transform 0.5s 0.1s cubic-bezier(0.16, 0.93, 0.85, 0.48);
 
-        
-    }
+		scroll-behavior: smooth;
+	}
+	.sluzby-list::-webkit-scrollbar {
+		display: none;
+	}
+
+	.sluzby-item {
+		flex: 1;
+		width: 350px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	.sluzby-item p {
+		width: 350px;
+	}
+	.circle {
+		width: 76px;
+		height: 76px;
+		border-radius: 50%;
+		border: 1px solid black;
+		background-color: transparent;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1rem;
+	}
+
+	.container {
+		margin: auto;
+		margin-top: 60px;
+		margin-bottom: 240px;
+		max-width: 1440px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 1rem;
+		gap: 120px;
+	}
+	.container:last-child {
+		margin-top: 0;
+		gap: 0;
+	}
+	.video {
+		margin-top: 30px;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+	.flex-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		gap: 2rem;
+	}
+	h1 {
+		max-width: 648px;
+		flex: 1;
+	}
+	.left {
+		flex: 1;
+		margin-top: 32px;
+		display: flex;
+		height: 100%;
+		justify-content: space-between;
+		gap: 3rem;
+		flex-direction: column;
+		max-width: 530px;
+	}
+	.box {
+		width: 100%;
+		height: 100%;
+		align-self: flex-start;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: 2rem;
+	}
+	.box-bottom {
+		margin-top: 120px;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		width: 100%;
+	}
+	@media screen and (min-width: 450px) {
+		.flex-box {
+			gap: 4rem;
+		}
+	}
+	@media screen and (min-width: 768px) {
+		.container {
+			margin-top: 0;
+			padding: 0 2rem;
+			gap: 240px;
+		}
+		.sluzby-item {
+			width: 500px;
+			cursor: grab;
+		}
+		.sluzby-item:active {
+			cursor: grabbing;
+		}
+		.sluzby-item p {
+			width: 500px;
+		}
+		.flex-box {
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 2rem;
+			max-width: 1440px;
+		}
+		.box-text {
+			width: 50%;
+		}
+	}
+	@media screen and (min-width: 1240px) {
+		.flex-box {
+			gap: 7rem;
+		}
+	}
 </style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const slider = document.querySelector(".sluzby-list") as HTMLElement;
+		let isDragging = false;
+		let startPos = 0;
+		let scrollLeft = 0;
+
+		slider.addEventListener("mousedown", (e: MouseEvent) => {
+			isDragging = true;
+			startPos = e.pageX - slider.offsetLeft;
+			scrollLeft = slider.scrollLeft;
+			slider.style.cursor = "grabbing";
+		});
+
+		slider.addEventListener("mouseleave", () => {
+			isDragging = false;
+			slider.style.cursor = "grab";
+		});
+
+		slider.addEventListener("mouseup", () => {
+			isDragging = false;
+			slider.style.cursor = "grab";
+		});
+
+		slider.addEventListener("mousemove", (e: MouseEvent) => {
+			if (!isDragging) return;
+			e.preventDefault(); // Предотвращаем выделение текста или другие действия
+			const x = e.pageX - slider.offsetLeft;
+			const walk = (x - startPos) * 2; // Умножаем на 2 для увеличения скорости скролла
+			slider.scrollLeft = scrollLeft - walk;
+		});
+	});
+</script>

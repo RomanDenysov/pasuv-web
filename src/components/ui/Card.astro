@@ -24,22 +24,22 @@ const { src, title, body, sertificats } = Astro.props;
 			<div class="sertificats">
 				<div class="sertificats-item">
 					<span class="sertificats-separator"/>
-					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<Icon name="TUV" class='sertificat-icon' size={100} style={{alignSelf: 'start'}}/>
 					<span class="sertificats-subtitle">ISO 9001:2015</span>
 				</div>
 				<div class="sertificats-item">
 					<span class="sertificats-separator"/>
-					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<Icon name="TUV" class='sertificat-icon' size={100} style={{alignSelf: 'start'}}/>
 					<span class="sertificats-subtitle">ISO 14001:2015</span>
 				</div>
 				<div class="sertificats-item">
 					<span class="sertificats-separator"/>
-					<Icon name="TUV" size={100} style={{alignSelf: 'start'}}/>
+					<Icon name="TUV" class='sertificat-icon' size={100} style={{alignSelf: 'start'}}/>
 					<span class="sertificats-subtitle">ISO 9001:2015</span>
 				</div>
 				<div class="sertificats-item">
 					<span class="sertificats-separator"/>
-					<Icon name="POS" size={100} style={{alignSelf: 'start'}}/>
+					<Icon name="POS" class='sertificat-icon' size={100} style={{alignSelf: 'start'}}/>
 					<span class="sertificats-subtitle">Poistenie zodpovednosti proti škodám až do výšky<br/>2 500 000 €</span>
 				</div>
 				
@@ -50,6 +50,9 @@ const { src, title, body, sertificats } = Astro.props;
 
 
 <style>
+	/* .sertificat-icon{
+		box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.1);
+	} */
 	.sertificats{
 		margin-top: 2.5rem;
 		width: 100%;

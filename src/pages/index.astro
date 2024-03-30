@@ -1,26 +1,54 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/ui/Card.astro';
-import Button from '../components/ui/Button.astro';
-import Divider from '../components/ui/Divider.astro';
-import HomePageHero from '../components/HomePageHero.astro';
-import { textData } from '../lib/text-data';
-import AccordionList from '../components/accordion/AccordionList.astro';
-import { Icon } from 'astro-icon/components'
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/ui/Card.astro";
+import ButtonFlip from "../components/ui/ButtonFlip.astro";
+import Divider from "../components/ui/Divider.astro";
+import HomePageHero from "../components/HomePageHero.astro";
+import { textData } from "../lib/text-data";
+import AccordionList from "../components/accordion/AccordionList.astro";
+import { Icon } from "astro-icon/components";
+import { t } from "i18next";
 
 const sluzbyData = textData.homepage.sluzby;
-const referencieData= textData.homepage.referencie;
 const ktoSme = textData.homepage.ktosme;
 
+const sluzbyCardCascade = [
+	{
+		title: t("home.sluzby.item1.title"),
+		content: t("home.sluzby.item1.content"),
+		img: "./homepage-cards/Content-Image-Stability.jpg",
+		sertificats: false,
+	},
+	{
+		title: t("home.sluzby.item2.title"),
+		content: t("home.sluzby.item2.content"),
+		img: "./homepage-cards/Content-Image-Responsibility.jpg",
+		sertificats: true,
+	},
+	{
+		title: t("home.sluzby.item3.title"),
+		content: t("home.sluzby.item3.content"),
+		img: "./homepage-cards/Content-Image-Experience.jpg",
+		sertificats: false,
+	},
+];
 ---
 
-<Layout title="Welcome to Pasuv" style='primary'>
-	<HomePageHero/>
-		<section class="container">
-
-			<Divider title={sluzbyData.elements.subtitle}/>
-			<ul>
-				{sluzbyData.content.map((card) => (
+<Layout
+	title="Komplexná vystavba, stavebné práce a pers. zabezpečenie - PASUV"
+	style="primary"
+>
+	<HomePageHero
+		title={t("home.hero.title")}
+		content={t("home.hero.content")}
+		button={t("home.hero.button")}
+		text={t("home.hero.text")}
+	/>
+	<section class="container">
+		<Divider title={t("home.sluzby.subtitle")} />
+		<ul class="sluzby-list">
+			{
+				sluzbyCardCascade.map((card) => (
 					<Card
 						title={card.title}
 						body={card.content}
@@ -28,48 +56,119 @@ const ktoSme = textData.homepage.ktosme;
 						sertificats={card.sertificats}
 					/>
 				))
-				}
-			</ul>
-			<Divider title={referencieData.elements.subtitle}/>
+			}
+		</ul>
+		<div class="button-box">
+			<ButtonFlip
+				color="green"
+				href="/sluzby"
+				body={t("home.sluzby.button")}
+				size={"large"}
+			/>
+		</div>
+		<div class="img-box">
+			<img
+				src={sluzbyData.elements.img}
+				alt={t("home.sluzby.imgTitle1")}
+				class="img-big"
+			/>
+			<div class="text-box">
+				<Icon
+					name="ArrowR"
+					size={20}
+					style={{ alignSelf: "center", color: "black" }}
+				/>
+				<span class="phototitle"
+					><b style="color: black">{t("home.sluzby.imgTitle1")}</b> / {
+						t("home.sluzby.imgTitle2")
+					}, 2023</span
+				>
+			</div>
+		</div>
+		<Divider title={t("home.referencie.subtitle")} />
+		<div class="flex-box">
+			<h1>
+				{t("home.referencie.title")}
+			</h1>
+			<p>
+				{t("home.referencie.content")}
+			</p>
+		</div>
+		<div class="mb">
+			<AccordionList />
+		</div>
+
+		<div class="button-box">
+			<ButtonFlip
+				color="green"
+				href="/referencie"
+				body={t("home.referencie.button").toUpperCase()}
+				size={"large"}
+			/>
+		</div>
+		<div class="mt-120">
+			<div class="flex-box">
+				<img
+					src={ktoSme.photoblock.img1}
+					alt={t("home.ktosme.title")}
+					class="imgblock"
+				/>
+				<img
+					src={ktoSme.photoblock.img2}
+					alt={t("home.ktosme.title")}
+					class="imgblock"
+				/>
+			</div>
+		</div>
+		<div class="mt-minus">
+			<Divider title={t("home.ktosme.subtitle")} />
 			<div class="flex-box">
 				<h1>
-					{referencieData.content.title}
+					{t("home.ktosme.title")}
 				</h1>
 				<p>
-					{referencieData.content.content}
+					{t("home.ktosme.content")}
 				</p>
 			</div>
-			<AccordionList/>
-			<div class="button-box">
-				<Button green href="/referencie" body={referencieData.elements.button.toUpperCase()} size={'large'}/>
+		</div>
+		<div class="button-box">
+			<ButtonFlip
+				color="green"
+				href="/ktosme"
+				body={t("home.ktosme.button").toUpperCase()}
+				size={"large"}
+				size={"large"}
+			/>
+		</div>
+		<div class="img-box">
+			<img src={ktoSme.elements.img} alt="" class="img-big" />
+			<div class="text-box">
+				<Icon
+					name="ArrowR"
+					size={20}
+					style={{ alignSelf: "center", color: "black" }}
+				/>
+				<span class="phototitle"
+					><b style="color: black">{t("home.ktosme.imgTitle1")}</b> / {
+						t("home.ktosme.imgTitle2")
+					}, 2015</span
+				>
 			</div>
-			<div class="flex-box">
-				<img src={ktoSme.photoblock.img1} alt="" class="imgblock">
-				<img src={ktoSme.photoblock.img2} alt="" class="imgblock">
-			</div>
-			<Divider title={ktoSme.elements.subtitle}/>
-			<div class="flex-box">
-				<h1>
-					{ktoSme.content.title}
-				</h1>
-				<p>
-					{ktoSme.content.content}
-				</p>
-			</div>
-			<div class="button-box">
-				<Button green href="/ktosme" body={ktoSme.elements.button.toUpperCase()} size={'large'} size={'large'}/>
-			</div>
-			<div class="img-box">
-				<img src={ktoSme.elements.img} alt="" class="img-big">
-				<div class="text-box">
-					<Icon name="ArrowR" size={26} style={{alignSelf: 'start'}}/>
-					<span>{ktoSme.elements.imgTitle}</span>
-				</div>
-			</div>
-		</section>
+		</div>
+	</section>
 </Layout>
 
 <style>
+	.mb {
+		margin-bottom: 120px;
+	}
+	.mt-minus {
+		margin-top: -110px;
+		margin-bottom: -220px;
+	}
+	.mt-120 {
+		margin-top: 220px;
+	}
 	.container {
 		padding: 0 1rem;
 		width: 100%;
@@ -81,18 +180,17 @@ const ktoSme = textData.homepage.ktosme;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-start;
-		margin-bottom: 240px;
+		margin-bottom: 330px;
 		gap: 2rem;
 	}
-	.flex-box h1{
+	.flex-box h1 {
 		flex: 1;
 		align-self: start;
-		line-height: 1; 
 	}
-	.flex-box p{
+	.flex-box p {
 		flex: 1;
-		line-height: 1; 
-		margin-top: 20px;
+		line-height: 32px;
+		margin-top: 32px;
 	}
 	.imgblock {
 		flex: 1;
@@ -106,9 +204,12 @@ const ktoSme = textData.homepage.ktosme;
 	}
 	.button-box {
 		display: flex;
+		align-items: center;
+		max-width: 100%;
+		width: 100%;
 		justify-content: center;
-		margin-top: 120px;
-		margin-bottom: 240px;
+		margin-top: 40px;
+		margin-bottom: 160px;
 	}
 	.img-box {
 		width: 100%;
@@ -116,7 +217,7 @@ const ktoSme = textData.homepage.ktosme;
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		margin-bottom: 240px;
+		margin-bottom: 190px;
 	}
 	.img-big {
 		max-width: 100%;
@@ -127,26 +228,43 @@ const ktoSme = textData.homepage.ktosme;
 	.text-box {
 		text-align: start;
 		font-size: 14px;
-		font-weight: 600; 
 		margin-top: 1rem;
+		font-weight: 400;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 5px;
+		color: var(--gray-neutral);
 	}
-	@media screen and (min-width: 768px){
+	.text-box span {
+		font-size: 14px;
+		font-weight: 400;
+	}
+	.sluzby-list {
+		margin-top: 160px;
+		margin-bottom: 120px;
+	}
+	@media screen and (min-width: 768px) {
 		.container {
 			margin: 0 auto;
 			max-width: 992px;
 			width: 100%;
 			height: 100%;
 		}
-		.imgblock{
+		.imgblock {
 			max-width: 460px;
+		}
+		.flex-box {
+			padding-top: 24px;
+		}
+		.flex-box h1 {
+			max-width: 420px;
+		}
+		.flex-box p {
+			max-width: 764px;
 		}
 	}
 	@media screen and (min-width: 992px) {
-	
 		.container {
 			padding: 2rem;
 			max-width: 1440px;
@@ -154,16 +272,15 @@ const ktoSme = textData.homepage.ktosme;
 			height: 100%;
 		}
 	}
-	@media screen and (min-width: 1024px){
+	@media screen and (min-width: 1024px) {
 		.flex-box {
+			padding-top: 24px;
 			flex-direction: row;
-		}		
+		}
 	}
-	@media screen and (min-width: 1200px){
-		
-		.imgblock{
+	@media screen and (min-width: 1200px) {
+		.imgblock {
 			max-width: 550px;
-		}	
+		}
 	}
-	
 </style>

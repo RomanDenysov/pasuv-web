@@ -1,0 +1,164 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props {
+	title: string;
+	description?: string;
+	style?: "primary" | "secondary";
+}
+
+const { title, description, style } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content=`${description}` />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--green: #93bf3e;
+		--gray-lightest: #ebebeb;
+		--gray-light: #cccccc;
+		--gray-neutral: #a3a3a3;
+		--gray-dark: #858585;
+		--gray-darkest: #5c5c5c;
+	}
+	html {
+		font-family: "Chakra Petch", sans-serif;
+		font-style: normal;
+		font-size: 24px;
+		background: #fff;
+		background-size: 224px;
+		color: black;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		overflow-x: hidden;
+		position: relative;
+	}
+	*,
+	body {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+		position: relative;
+		
+	}
+	main {
+		position: relative;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+	h1 {
+		font-size: 40px;
+		line-height: 48px;
+		font-weight: 400;
+	}
+	h2 {
+		font-size: 28px;
+		line-height: 32px;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 28px;
+		line-height: 32px;
+		font-weight: 400;
+	}
+	p {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 400;
+	}
+	span {
+		font-size: 14px;
+		line-height: 16px;
+		font-weight: 600;
+	}
+	a {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	ul {
+		list-style: none;
+	}
+	@media screen and (min-width: 768px) {
+	h1 {
+		font-size: 48px;
+		line-height: 56px;
+		font-weight: 400;
+	}
+	h2 {
+		font-size: 32px;
+		line-height: 40px;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 32px;
+		line-height: 40px;
+		font-weight: 400;
+	}
+	p {
+		font-size: 20px;
+		line-height: 28px;
+		font-weight: 400;
+	}
+	span {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 600;
+	}
+	}
+	@media screen and (min-width: 1024px) {
+	h1 {
+		font-size: 60px;
+		line-height: 72px;
+		font-weight: 400;
+	}
+	h2 {
+		font-size: 40px;
+		line-height: 48px;
+		font-weight: 500;
+	}
+	h3 {
+		font-size: 40px;
+		line-height: 48px;
+		font-weight: 400;
+	}
+	p {
+		font-size: 24px;
+		line-height: 32px;
+		font-weight: 400;
+	}
+	span {
+		font-size: 20px;
+		line-height: 28px;
+		font-weight: 600;
+	}
+	}
+</style>

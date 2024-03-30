@@ -1,0 +1,165 @@
+{
+    "site": {
+        "title": "My Site",
+        "description": "This is my site"
+    },
+    "home": {
+        "hero": {
+			"title": "Kvalifikovaní a skúsení pracovníci pre vaše projekty",
+			"content": "Máte nedostatok kvalifikovaného personálu na stavebnom projekte, alebo potrebujete urýchliť jeho realizáciu? Sme pripravení čo najskôr k vám vyslať potrebný počet skúsených pracovníkov.",
+			"button": "Začnime spolupracovať",
+			"text": "Už od roku 2013 spolupracujeme na rôznych stavebných projektoch. Špecializujeme sa na priemyselnú aj bytovú výstavbu, stavbu hotelov, škôl a komerčných objektov.",
+            "info": "Elektrikári, murári, vodoinštalatéri, stavební pracovníci a ďalšie profesie"
+        },
+        "sluzby": {
+			"subtitle": "Služby",
+			"button": "VIAC O SLUŽBÁCH",
+			"imgTitle1": "Am Tacheles",
+			"imgTitle2": "Berlin",
+            "item1": {
+                "title": "Stabilita",
+                "content": "Vďaka viac než 10-ročným skúsenostiam a dlhodobým spoluprácam s praxou overenými elektrikármi, murármi či inštalatérmi, v nás získavate stabilného partnera, ktorý promptne reaguje na akékoľvek dopyty. Naša spoločnosť má všetky potrebné registrácie a povolenia na vykonávanie stavebných činností v Nemecku a v celej EÚ."
+            },
+            "item2": {
+                "title": "Zodpovednosť",
+                "content": "Sme držiteľom certifikátov kvality ISO a certifikátu dôveryhodnosti Bisnode AAA. Naša spoločnosť je prosperujúca a ekonomicky zdravá. Máme poistenie zodpovednosti proti škodám až do výšky 2,5 milióna EUR. Poctivo si plníme všetky zmluvné a finančné záväzky voči úradom, klientom aj verejnosti."
+            },
+            "item3": {
+                "title": "Skúsenosti",
+                "content": "Na vaše projekty vysielame ucelené partie 2-3-4 skúsených stavebných pracovníkov. Počet a zloženie radi prispôsobíme vašim požiadavkám a potrebám. Členom tímu je vždy nemecky hovoriaci vedúci pracovník. Dbáme na to, aby naša činnosť bola v súlade s predpismi a legislatívou Nemecka či EÚ. Rovnaký prístup vyžadujeme od našich stavebných pracovníkov."
+            }
+        },
+        "referencie": {
+			"subtitle": "Referencie",
+			"button": "Ďalšie úspešné projekty",
+			"title": "Našou vizitkou sú spokojní partneri",
+			"content": "V našom portfóliu nájdete priemyselné haly, byty, apartmány, hotely, školy a komerčné budovy. Prijmeme aj tie najnáročnejšie výzvy a stavebné projekty.",
+            "city1": "Berlin",
+			"city2": "Duisburg",
+			"city3": "Leipzig",
+            "city4": "Rostrock"
+		},
+        "ktosme": {
+			"subtitle": "Kto sme",
+			"button": "Zistite o nás viac",
+			"imgTitle1": "Hotel H2 Hyperion",
+			"imgTitle2": "Berlin",
+			"title": "Od roku 2013 sme úspešne zrealizovali 89 stavieb v 6 krajinách",
+			"content": "Naša stavebná firma patrí k popredným subdodávateľom pre klientov v rámci celej EÚ, no predovšetkým v Nemecku. Teší nás, že sme si za tento čas vybudovali renomé stabilného partnera, ktorý doťahuje veci do úspešného konca. Zároveň ide o záväzok, ktorý si vážime a každý deň pracujeme na tom, aby sme vám poskytovali stavebné služby na najvyššej úrovni."
+		}
+    },
+    "sluzby":{
+        "site": {
+            "title":"Špecialisti na stavebníctvo a inštalácie - Pasuv"
+        },
+        "hero":{
+			"subtitle": "Služby",
+            "title":"Spolupráca na pevných základoch",
+            "content1": "Potrebujete kvalifikovaných a spoľahlivých robotníkov, ktorí za sebou majú bohaté skúsenosti? My vám ich dodáme v určený čas a v potrebnom počte. Ponúkame vám komplexné stavebné služby na priemyselných aj bytových projektoch, pri komerčnej aj občianskej výstavbe.",
+		    "content2":"Ak sa rozhodnete pre spoluprácu s nami, získate stabilného partnera po celú dobu realizácie stavby aj na ďalšie projekty."
+		},
+        "info": {
+            "title": "Na vaše projekty vysielame ucelené partie 2-3-4 skúsených stavebných pracovníkov. Počet a zloženie prispôsobíme vašim požiadavkám.",
+            "subtitle1": "Dlhodobo spolupracujeme s profesionálnymi elektrikármi, murármi, vodoinštalatérmi a ďalšími stavebnými robotníkmi.",
+            "subtitle2": "Náš tím tvoria tiež špecialisti,ktorí sa postarajú o daňové a právne náležitosti, vrátane potrebnej administratívy."
+        },
+        "subinfo": {
+			"devider": "Spolupráca",
+			"title": "Ako prebieha spolupráca?",
+			"item1": "Úvodné stretnutie",
+			"content1": "Predstavíte nám svoj projekt a požiadavky",
+			"item2": "Dohoda na podmienkach",
+			"content2": "Dohodneme kompletné podmienky spolupráce",
+			"item3": "Podpis zmlúv",
+			"content3": "Podpíšeme zmluvy, postaráme sa o dokumentáciu",
+			"item4": "Výber tímu",
+			"content4": "Vyberieme tých najvhodnejších profesionálov",
+			"item5": "Vyslanie pracovníkov",
+			"content5": "Naši skúsení stavební robotníci cestujú na váš projekt"
+		}
+    },
+    "referencie": {
+        "site": {
+			"title": "Referenčné projekty v stavebníctve - Pasuv"
+		},
+        "hero":{
+			"subtitle": "Referencie",
+			"title": "Našou vizitkou sú spokojní partneri",
+			"content1": "Od roku 2013 sme úspešne zrealizovali 89 stavieb v 6 krajinách. Našich profesionálov vysielame na súkromné developerské projekty, poskytujeme stavebné služby aj v štátnej a občianskej sfére.",
+			"content2": "Základným pilierom našej filozofie je vaša spokojnosť. Aj preto dbáme na jasnú a transparentnú komunikáciu už od samého začiatku spolupráce. To, na čom sa dohodneme, vám v plnom rozsahu dodáme."
+		},
+        "info": {
+			"devider": "Referencie",
+            "category1": "Občianska výstavba"
+		}
+    },
+    "ktosme": {
+		"site": {
+			"title": "Spoločnosť PASUV s desaťročnú tradíciou na trhu práce - Pasuv"
+		},
+		"hero": {
+			"subtitle": "Kto sme",
+			"title": "Patríme k popredným dodávateľom prác v Nemecku, ale aj v celej EÚ",
+			"content1": "Spoločnosť PASUV vznikla v roku 2013 na Slovensku. Teší nás, že sme si za vyše 10 rokov existencie vybudovali renomé stabilného partnera, ktorý doťahuje veci do úspešného konca.",
+			"content2": "V našom portfóliu nájdete byty, priemyselné objekty, hotely, školy aj komerčné budovy. Aj vám radi pomôžeme s realizáciou vášho stavebného projektu."
+		},
+        "info": {
+			"title": "Základom úspechu je náš tím. Gro tvoria skúsení stavební robotníci s bohatou praxou, na ktorých sa vždy môžeme spoľahnúť ako my, tak naši klienti.",
+			"subtitle1": "Nemenej dôležitou súčasťou sú odborníci na daňové, právne a administratívne záležitosti. Pri nadväzovaní spoluprác dbáme na to, aby naši pracovníci boli profesionálni, spoľahliví, dochvílni a stáli si za svojím slovom.",
+			"subtitle2": "Aj vďaka skúsenému tímu za nami stojí množstvo úspešných projektov, aktuálne už viac než 89 stavieb v 6 krajinách. Ak čelíte náročnej výzve, stavebná firma PASUV stojí pri vás.",
+			"sertificate": "Poistenie zodpovednosti proti škodám až do výšky"
+		}
+	},
+    "kontakt": {
+		"site": {
+			"title": "Kontakt - Pasuv"
+		},
+		"hero": {
+			"subtitle": "Kontakt",
+			"title": "Sme pripravení na spoluprácu s vami",
+			"content1": "V prípade záujmu o spoluprácu alebo ďalšie informácie nás neváhajte kontaktovať vami preferovanou formou."
+		},
+        "info": {
+			"devider": "Kontaktné a fakturačné údaje",
+			"text1": "Odpovedáme najneskôr do 2 pracovných dní",
+			"text2": "V pracovných dňoch",
+			"text3": "Zobraziť na mape",
+			"text4": "Spoločnosť je zapísaná v obchodnom registri Okresného súdu Bratislava I, Oddiel: Sro, Vložka č.: 000000/B",
+			"text5": "Sledujte nás",
+			"text6": "Na stiahnutie",
+			"text7": "Katalóg v PDF"
+		}
+	},
+    "form": {
+		"title1": "Máte otázky alebo záujem o spoluprácu?",
+		"title2": "Kontaktujte nás",
+		"theme": "Téma",
+		"option1": "Zvoľte tému správy",
+		"option2": "Záujem o spoluprácu",
+		"option3": "Cenová ponuka",
+		"option4": "Otázky a dopyty",
+		"option5": "Všeobecné informácie",
+		"option6": "Marketing a reklama",
+		"name": "Meno",
+		"namePlaceholder": "Zadajte vaše meno",
+		"email": "E-mail",
+		"emailPlaceholder": "Zadajte váš e-mail",
+		"phone": "Telefón",
+		"phonePlaceholder": "Zadajte vaše telefónne číslo",
+		"message": "Správa",
+		"messagePlaceholder": "Zadajte text správy",
+		"info": "Beriem na vedomie, že moje osobné údaje budú mspracovávané za účelom komunikácie týkajúcej sa možnej spolupráce alebo uzatvorenia zmluvy. Bližšie informácie nájdete v",
+		"link": "zásadách spracovania osobných údajov.",
+		"button": "Odoslať"
+	},
+    "footer": {
+		"title1": "Spoluprácou s našou spoločnosťou získate stabilného a skúseného partnera počas celej doby realizácie, aj na vaše ďalšie projekty",
+		"button1": "Kontaktujte nás",
+		"word1": "Stabilita.",
+		"word2": "Zodpovednosť.",
+		"word3": "Skúsenosti.",
+        "item1": "Ochrana osobných údajov",
+		"item2": "Nastavenie cookies",
+		"item3": "© 2023 Pasuv EU SE. Designed & developed by SMASH"
+	}
+}

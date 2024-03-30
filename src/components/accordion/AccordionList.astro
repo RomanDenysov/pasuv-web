@@ -1,38 +1,67 @@
 ---
-import AccordionItem from './AccordionItem.astro';
-import { textData } from '../../lib/text-data';
+import AccordionItem from "./AccordionItem.astro";
+import { t } from "i18next";
 
-
-const referencieData= textData.homepage.referencie;
+const accordionItems = [
+	{
+		id: 1,
+		title: "Am Tacheles",
+		year: "2023",
+		city: t("home.referencie.city1"),
+		img: "/referencie/AM-Tacheles.jpg",
+	},
+	{
+		id: 2,
+		title: "Mercator One",
+		year: "2016",
+		city: t("home.referencie.city2"),
+		img: "/referencie/Mercator-One.jpg",
+	},
+	{
+		id: 3,
+		title: "Hotel H2",
+		year: "2015",
+		city: t("home.referencie.city3"),
+		img: "/referencie/Hotel-H2.jpg",
+	},
+	{
+		id: 4,
+		title: "AW Institut",
+		year: "2018",
+		city: t("home.referencie.city4"),
+		img: "/Alfred Wegener Institute/Alfred Wegener Institute 1.jpg",
+	},
+];
 ---
+
 <ul>
-    <span class="line" />
-    {referencieData.accordion.map((item) => (
-        <AccordionItem 
-            id={item.id}
-            key={item.id}
-            city={item.city}
-            year={item.year}
-            title={item.title}
-            img={item.img}
-        />
-    ))
-    }
+	{
+		accordionItems.map((item) => (
+			<AccordionItem
+				id={item.id}
+				key={item.id}
+				city={item.city}
+				year={item.year}
+				title={item.title}
+				img={item.img}
+			/>
+		))
+	}
+	<span class="line"></span>
 </ul>
 <style>
-    ul {
-        max-width: 100%;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        background-color: white;
-    }
-    .line {
-        display: block;
-        width: 100%;
-        height: 1px;
-        background-color: var(--gray-light);
-        margin-top: 1rem;
-    }
+	ul {
+		max-width: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		background-color: white;
+	}
+	.line {
+		display: block;
+		width: 100%;
+		height: 1px;
+		background-color: var(--gray-light);
+		margin-top: 1rem;
+	}
 </style>
-
