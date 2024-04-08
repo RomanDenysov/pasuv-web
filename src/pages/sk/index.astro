@@ -1,15 +1,15 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/ui/Card.astro";
-import ButtonFlip from "../components/ui/ButtonFlip.astro";
-import Divider from "../components/ui/Divider.astro";
-import HomePageHero from "../components/HomePageHero.astro";
-import { textData } from "../lib/text-data";
-import AccordionList from "../components/accordion/AccordionList.astro";
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/ui/Card.astro";
+import ButtonFlip from "../../components/ui/ButtonFlip.astro";
+import Divider from "../../components/ui/Divider.astro";
+import HomePageHero from "../../components/HomePageHero.astro";
+import { textData } from "../../lib/text-data";
+import AccordionList from "../../components/accordion/AccordionList.astro";
 import { Icon } from "astro-icon/components";
 import { t, changeLanguage } from "i18next";
 
-changeLanguage("de");
+changeLanguage("sk");
 
 const sluzbyData = textData.homepage.sluzby;
 const ktoSme = textData.homepage.ktosme;

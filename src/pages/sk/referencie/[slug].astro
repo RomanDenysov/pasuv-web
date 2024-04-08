@@ -1,9 +1,9 @@
 ---
 import { changeLanguage } from "i18next";
-import { referenceData } from "../../content/referencie/config";
-import ModalLayout from "../../layouts/ModalLayout.astro";
+import { referenceData } from "../../../content/referencie/config";
+import ModalLayout from "../../../layouts/ModalLayout.astro";
 
-changeLanguage("de");
+changeLanguage("sk");
 
 export async function getStaticPaths() {
     return referenceData.map((item) => {

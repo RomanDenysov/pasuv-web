@@ -1,0 +1,172 @@
+{
+	"site": {
+		"title": "My Site",
+		"description": "This is my site"
+	},
+	"header": {
+		"nav1": "Home",
+		"nav2": "Dienstleistungen",
+		"nav3": "Verweise",
+		"nav4": "Wer wir sind",
+		"nav5": "Kontaktiere uns"
+	},
+	"home": {
+		"hero": {
+			"title": "Qualifizierte und erfahrene Mitarbeiter für Ihre Projekte",
+			"content": "Haben Sie bei einem Bauvorhaben einen Mangel an qualifiziertem Personal oder müssen Sie die Umsetzung beschleunigen? Wir sind bereit, Ihnen so schnell wie möglich die erforderliche Anzahl erfahrener Arbeitskräfte zu entsenden.",
+			"button": "Beginnen wir mit der Zusammenarbeit",
+			"text": "Seit 2013 arbeiten wir bei verschiedenen Bauprojekten zusammen. Wir sind spezialisiert auf den Industrie- und Wohnungsbau, den Bau von Hotels, Schulen und Gewerbebauten.",
+			"info": "Elektriker, Maurer, Klempner, Bauarbeiter und andere Berufe"
+		},
+		"sluzby": {
+			"subtitle": "Dienstleistungen",
+			"button": "MEHR ÜBER DIE DIENSTLEISTUNGEN",
+			"imgTitle1": "Am Tacheles",
+			"imgTitle2": "Berlin",
+			"item1": {
+				"title": "Stabilität",
+				"content": "Dank über 10 Jahren Erfahrung und langjähriger Zusammenarbeit mit erfahrenen Elektrikern, Maurern und Klempnern erhalten Sie in uns einen stabilen Partner, der umgehend auf alle Anfragen reagiert. Unser Unternehmen verfügt über alle notwendigen Anmeldungen und Genehmigungen zur Durchführung von Bautätigkeiten in Deutschland und der gesamten EU."
+			},
+			"item2": {
+				"title": "Verantwortung",
+				"content": "Wir verfügen über ISO-Qualitätszertifikate und das Vertrauensgültigkeitszertifikat Bisnode AAA. Unser Unternehmen ist erfolgreich und wirtschaftlich gesund. Wir verfügen über eine Haftpflichtversicherung bis 2,5 Mio. Euro. Wir erfüllen alle vertraglichen und finanziellen Verpflichtungen gegenüber Behörden, Kunden und der Öffentlichkeit ehrlich."
+			},
+			"item3": {
+				"title": "Erfahrungen",
+				"content": "Wir entsenden komplette Gruppen von 2-3-4 erfahrenen Bauarbeitern zu Ihren Projekten. Gerne passen wir die Anzahl und Zusammensetzung Ihren Anforderungen und Bedürfnissen an. Das Teammitglied ist immer eine deutschsprachige Führungskraft. Wir achten darauf, dass unsere Tätigkeit im Einklang mit den Vorschriften und Gesetzen Deutschlands bzw. der EU steht. Das gleiche Vorgehen fordern wir auch von unseren Bauarbeitern."
+			}
+		},
+		"referencie": {
+			"subtitle": "Verweise",
+			"button": "Weitere erfolgreiche Projekte",
+			"title": "Zufriedene Partner sind unsere Visitenkarte",
+			"content": "In unserem Portfolio finden Sie Industriehallen, Wohnungen, Apartments, Hotels, Schulen und Gewerbebauten. Wir nehmen auch die anspruchsvollsten Herausforderungen und Bauprojekte an.",
+			"city1": "Berlin",
+			"city2": "Duisburg",
+			"city3": "Leipzig",
+			"city4": "Rostrock"
+		},
+		"ktosme": {
+			"subtitle": "Wer wir sind",
+			"button": "Erfahren Sie mehr über uns",
+			"imgTitle1": "Hotel H2 Hyperion",
+			"imgTitle2": "Berlin",
+			"title": "Seit 2013 haben wir 89 Bauvorhaben in 6 Ländern erfolgreich abgeschlossen",
+			"content": "Unser Bauunternehmen ist einer der führenden Subunternehmer für Kunden in der gesamten EU, insbesondere aber in Deutschland. Wir freuen uns, dass wir uns in dieser Zeit einen Ruf als stabiler Partner aufgebaut haben, der Dinge zu einem erfolgreichen Abschluss bringt. Gleichzeitig ist es ein Engagement, das wir wertschätzen und jeden Tag daran arbeiten, Ihnen Baudienstleistungen auf höchstem Niveau zu bieten."
+		}
+	},
+	"sluzby": {
+		"site": {
+			"title": "Bau- und Installations-Spezialisten - Pasuv"
+		},
+		"hero": {
+			"subtitle": "Dienstleistungen",
+			"title": "Zusammenarbeit auf solidem Fundament",
+			"content1": "Sie benötigen qualifizierte und zuverlässige Arbeitskräfte mit langjähriger Erfahrung? Wir liefern Ihnen diese zum angegebenen Zeitpunkt und in der benötigten Menge. Wir bieten Ihnen umfassende Baudienstleistungen für Industrie- und Wohnbauprojekte, für den Gewerbe- und Zivilbau.",
+			"content2": "Wenn Sie sich für eine Zusammenarbeit mit uns entscheiden, erhalten Sie einen stabilen Partner für die gesamte Bauzeit und für weitere Projekte."
+		},
+		"info": {
+			"title": "Wir entsenden komplette Gruppen von 2-3-4 erfahrenen Bauarbeitern zu Ihren Projekten. Wir passen die Anzahl und Zusammensetzung Ihren Anforderungen an.",
+			"subtitle1": "Wir arbeiten seit langem mit professionellen Elektrikern, Mauern, Klempnern und anderen Bauarbeitern zusammen.",
+			"subtitle2": "Unser Team besteht außerdem aus Spezialisten, die sich um steuerliche und rechtliche Belange inklusive der notwendigen Administration kümmern."
+		},
+		"subinfo": {
+			"devider": "Zusammenarbeit",
+			"title": "Wie läuft die Zusammenarbeit?",
+			"item1": "Einführungstreffen",
+			"content1": "Du stellst vor uns Ihr Projekt und Ihre Anforderungen vor",
+			"item2": "Einigung über die Konditionen",
+			"content2": "Wir vereinbaren die vollständigen Bedingungen der Zusammenarbeit",
+			"item3": "Verträge unterzeichnen",
+			"content3": "Wir unterzeichnen die Verträge, kümmern uns um die Dokumentation",
+			"item4": "Teamauswahl",
+			"content4": "Wir wählen die am besten geeigneten Fachkräfte aus",
+			"item5": "Entsendung von Arbeitnehmern",
+			"content5": "Unsere erfahrenen Bauarbeiter reisen zu Ihrem Projekt"
+		}
+	},
+	"referencie": {
+		"site": {
+			"title": "Referenzprojekte im Bauwesen - Pasuv"
+		},
+		"hero": {
+			"subtitle": "Verweise",
+			"title": "Zufriedene Partner sind unsere Visitenkarte",
+			"content1": "Seit 2013 haben wir 89 Bauvorhaben in 6 Ländern erfolgreich abgeschlossen. Wir entsenden unsere Fachkräfte zu privaten Entwicklungsprojekten und bieten auch Baudienstleistungen im staatlichen und zivilen Bereich an.",
+			"content2": "Der Grundpfeiler unserer Philosophie ist Ihre Zufriedenheit. Deshalb achten wir bereits zu Beginn der Zusammenarbeit auf eine klare und transparente Kommunikation. Was wir vereinbaren, liefern wir Ihnen vollständig."
+		},
+		"info": {
+			"devider": "Verweise",
+			"category1": "Zivilbau"
+		}
+	},
+	"ktosme": {
+		"site": {
+			"title": "PASUV-Unternehmen mit zehnjähriger Tradition auf dem Arbeitsmarkt - Pasuv"
+		},
+		"hero": {
+			"subtitle": "Wer wir sind",
+			"title": "Wir sind einer der führenden Baudienstleister in Deutschland, aber auch in der gesamten EU",
+			"content1": "PASUV wurde 2013 in der Slowakei gegründet. Wir freuen uns, dass wir uns in den mehr als 10 Jahren unseres Bestehens einen Ruf als stabiler Partner aufgebaut haben, der Dinge zu einem erfolgreichen Abschluss bringt.",
+			"content2": "Unser Portfolio umfasst Wohnungen, Industriebauten, Hotels, Schulen und Gewerbebauten. Gerne unterstützen wir Sie auch bei der Umsetzung Ihres Bauvorhabens."
+		},
+		"info": {
+			"title": "Die Basis des Erfolgs ist unser Team. Gro besteht aus erfahrenen Bauarbeitern mit umfassender Erfahrung, auf die sich sowohl wir als auch unsere Kunden jederzeit verlassen können.",
+			"subtitle1": "Ein nicht minder wichtiger Teil sind Experten für Steuer-, Rechts- und Verwaltungsangelegenheiten. Beim Aufbau einer Zusammenarbeit achten wir darauf, dass unsere Mitarbeiter professionell, zuverlässig, pünktlich sind und ihr Wort halten.",
+			"subtitle2": "Dank unseres erfahrenen Teams haben wir viele erfolgreiche Projekte hinter uns, derzeit mehr als 89 Bauten in 6 Ländern. Wenn Sie vor einer schwierigen Herausforderung stehen, steht Ihnen das Bauunternehmen PASUV zur Seite.",
+			"sertificate": "Haftpflichtversicherung gegen Schäden bis zu 2.500.000 €"
+		}
+	},
+	"kontakt": {
+		"site": {
+			"title": "Kontakt - Pasuv"
+		},
+		"hero": {
+			"subtitle": "Kontakt",
+			"title": "Wir sind bereit, mit Ihnen zusammenzuarbeiten",
+			"content1": "Wenn Sie Interesse an einer Zusammenarbeit oder weiteren Informationen haben, zögern Sie nicht, uns zu kontaktieren"
+		},
+		"info": {
+			"devider": "Kontakt- und Rechnungsinformationen",
+			"text1": "Wir antworten spätestens innerhalb von 2 Werktagen",
+			"text2": "An Wochentagen",
+			"text3": "Auf der Karte anzeigen",
+			"text4": "Die Gesellschaft ist im Handelsregister des Bezirksgerichts Bratislava I, Abteilung: Sro, Einlage Nr.: 000000/B eingetragen",
+			"text5": "Folgen Sie uns",
+			"text6": "Zum Download",
+			"text7": "Katalog in PDF"
+		}
+	},
+	"form": {
+		"title1": "Sie haben Fragen oder Interesse an einer Zusammenarbeit?",
+		"title2": "Kontaktiere uns",
+		"theme": "Thema",
+		"option1": "Wählen Sie ein Nachrichtenthema",
+		"option2": "Interesse an einer Zusammenarbeit",
+		"option3": "Angebotspreis",
+		"option4": "Fragen und Anfragen",
+		"option5": "Allgemeine Informationen",
+		"option6": "Vermarktung und Werbung",
+		"name": "Name",
+		"namePlaceholder": "Ihren Namen eingeben",
+		"email": "E-mail",
+		"emailPlaceholder": "Geben sie ihre E-Mail Adresse ein",
+		"phone": "Telefon",
+		"phonePlaceholder": "Gib deine Telefonnummer ein",
+		"message": "Eine Nachricht",
+		"messagePlaceholder": "Geben Sie den Nachrichtentext ein",
+		"info": "Ich nehme zur Kenntnis, dass meine personenbezogenen Daten zum Zwecke der Kommunikation über eine mögliche Zusammenarbeit oder einen Vertragsabschluss verarbeitet werden. Weitere Informationen finden Sie in",
+		"link": "Grundsätze der Verarbeitung personenbezogener Daten.",
+		"button": "Senden"
+	},
+	"footer": {
+		"title1": "Durch die Zusammenarbeit mit unserem Unternehmen erhalten Sie einen stabilen und erfahrenen Partner während der gesamten Umsetzungszeit, auch für Ihre anderen Projekte",
+		"button1": "Kontaktiere uns",
+		"word1": "Stabilität.",
+		"word2": "Verantwortung.",
+		"word3": "Erfahrungen.",
+		"item1": "Schutz personenbezogener Daten",
+		"item2": "Cookies setzen",
+		"item3": "© 2023 Pasuv EU SE. Designed & developed by SMASH"
+	}
+}

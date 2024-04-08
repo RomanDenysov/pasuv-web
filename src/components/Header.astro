@@ -1,6 +1,10 @@
 ---
 import Button from "./ui/Button.astro";
 import ButtonFlip from "./ui/ButtonFlip.astro";
+import { LanguageSelector } from "astro-i18next/components";
+import i18next, { t } from "i18next";
+//@ts-ignore
+import { localizePath } from "astro-i18next";
 
 interface HeaderProps {
 	style?: "primary" | "secondary";
@@ -30,14 +34,14 @@ const { style = "primary" } = Astro.props as HeaderProps;
 					class="logo-alter"
 				/>
 			</a>
+
 			<!-- <div class="lang-box">
-                    <img src="/lang-select.svg" alt="Language" />
-                    <select name="lang" id="lang" class="lang-select">
-                        <option value="en" class="lang-item">English</option>
-                        <option value="de" class="lang-item">German</option>
-                        <option value="sk" class="lang-item">Slovak</option>
-                    </select>
-                </div> -->
+				<img src="/lang-select.svg" alt="Language" />
+				<LanguageSelector
+					languageMapping={{ sk: "Slovencina", de: "Deutsch" }}
+					class={"lang-select"}
+				/>
+			</div> -->
 		</div>
 		{
 			style === "primary" ? (
@@ -79,19 +83,23 @@ const { style = "primary" } = Astro.props as HeaderProps;
 			</button>
 			<div class="mobile-nav-bar">
 				<ul class="mobile-nav-list">
-					<li class="mobile-nav-item"><a href="/">Domov</a></li>
 					<li class="mobile-nav-item">
-						<a href="/sluzby">Služby</a>
+						<a href={localizePath("/")}>{t("header.nav1")}</a>
 					</li>
 					<li class="mobile-nav-item">
-						<a href="/referencie">Referencie</a>
+						<a href={localizePath("/sluzby")}>{t("header.nav2")}</a>
 					</li>
 					<li class="mobile-nav-item">
-						<a href="/ktosme">Kto sme</a>
+						<a href={localizePath("/referencie")}
+							>{t("header.nav3")}</a
+						>
 					</li>
 					<li class="mobile-nav-item">
-						<a href="/kontakt"
-							>Kontaktujte nás
+						<a href={localizePath("/ktosme")}>{t("header.nav4")}</a>
+					</li>
+					<li class="mobile-nav-item">
+						<a href={localizePath("/kontakt")}
+							>{t("header.nav5")}
 							<svg
 								width="20"
 								height="20"
@@ -112,13 +120,12 @@ const { style = "primary" } = Astro.props as HeaderProps;
 					</li>
 				</ul>
 				<!-- <div class="mobile-lang-box">
-                        <img src="/lang-select.svg" alt="Language" />
-                        <select name="lang" id="lang" class="lang-select">
-                            <option value="en" class="lang-item">English</option>
-                            <option value="de" class="lang-item">German</option>
-                            <option value="sk" class="lang-item">Slovak</option>
-                        </select>
-                    </div> -->
+					<img src="/lang-select.svg" alt="Language" />
+					<LanguageSelector
+						languageMapping={{ sk: "Slovencina", de: "Deutsch" }}
+						class={"lang-select"}
+					/>
+				</div> -->
 			</div>
 		</nav>
 
@@ -127,30 +134,36 @@ const { style = "primary" } = Astro.props as HeaderProps;
 				<nav class="right-box">
 					<ul class="navbar" id="navbar">
 						<li class="underline-white">
-							<a href="/">Domov</a>
+							<a href={localizePath("/")}>{t("header.nav1")}</a>
 						</li>
 						<li class="underline-white">
-							<a href="/sluzby">Služby</a>
+							<a href={localizePath("/sluzby")}>
+								{t("header.nav2")}
+							</a>
 						</li>
 						<li class="underline-white">
-							<a href="/referencie">Referencie</a>
+							<a href={localizePath("/referencie")}>
+								{t("header.nav3")}
+							</a>
 						</li>
 						<li class="underline-white">
-							<a href="/ktosme">Kto sme</a>
+							<a href={localizePath("/ktosme")}>
+								{t("header.nav4")}
+							</a>
 						</li>
 					</ul>
 					<div class="btn">
 						<ButtonFlip
-							body="Kontaktujte nás"
-							href="/kontakt"
+							body={t("header.nav5")}
+							href={localizePath("/kontakt")}
 							size={"small"}
 						/>
 					</div>
 					<div class="btn-blck">
 						<ButtonFlip
 							color="black"
-							body="Kontaktujte nás"
-							href="/kontakt"
+							body={t("header.nav5")}
+							href={localizePath("/kontakt")}
 							size={"small"}
 						/>
 					</div>
@@ -159,22 +172,28 @@ const { style = "primary" } = Astro.props as HeaderProps;
 				<nav class="right-box-secondary">
 					<ul class="navbar-secondary">
 						<li class="underline">
-							<a href="/">Domov</a>
+							<a href={localizePath("/")}>{t("header.nav1")}</a>
 						</li>
 						<li class="underline">
-							<a href="/sluzby">Služby</a>
+							<a href={localizePath("/sluzby")}>
+								{t("header.nav2")}
+							</a>
 						</li>
 						<li class="underline">
-							<a href="/referencie">Referencie</a>
+							<a href={localizePath("/referencie")}>
+								{t("header.nav3")}
+							</a>
 						</li>
 						<li class="underline">
-							<a href="/ktosme">Kto sme</a>
+							<a href={localizePath("/ktosme")}>
+								{t("header.nav4")}
+							</a>
 						</li>
 					</ul>
 					<ButtonFlip
 						color="black"
-						body="Kontaktujte nás"
-						href="/kontakt"
+						body={t("header.nav5")}
+						href={localizePath("/kontakt")}
 						size={"small"}
 					/>
 				</nav>
@@ -488,6 +507,7 @@ const { style = "primary" } = Astro.props as HeaderProps;
 		.lang-box {
 			display: flex;
 			align-items: center;
+			gap: 6px;
 		}
 		.lang-select {
 			--webkit-appearance: none;
@@ -502,12 +522,14 @@ const { style = "primary" } = Astro.props as HeaderProps;
 		}
 		.lang-select:focus {
 			outline: none;
+			border: none;
 		}
 		.lang-select:active {
 			outline: none;
+			border: none;
 		}
 		.lang-select option {
-			background-color: black;
+			background-color: gray;
 			color: var(--gray-neutral);
 			font-size: 16px;
 			line-height: 24px;

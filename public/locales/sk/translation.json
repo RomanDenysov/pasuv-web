@@ -3,6 +3,13 @@
         "title": "My Site",
         "description": "This is my site"
     },
+	"header":{
+		"nav1": "Domov",
+		"nav2": "Služby",
+		"nav3": "Referencie",
+		"nav4": "Kto sme",
+		"nav5": "Kontaktujte nás"
+	},
     "home": {
         "hero": {
 			"title": "Kvalifikovaní a skúsení pracovníci pre vaše projekty",
