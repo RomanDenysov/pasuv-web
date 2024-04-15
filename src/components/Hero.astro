@@ -66,6 +66,7 @@ const { img, title, subtitle, content1, content2 } = Astro.props as HeroProps;
         height: 50vh;
         min-height: 568px;
         object-fit: cover;
+        object-position: 15% 50%;
         /* filter: brightness(42%); */
     }
     .img-bg {
@@ -137,6 +138,9 @@ const { img, title, subtitle, content1, content2 } = Astro.props as HeroProps;
             justify-content: center;
             align-items: center;
             gap: 1rem;
+        }
+        .img {
+            object-position: center;
         }
         .right-box{
             flex: 1;

@@ -2,6 +2,7 @@
 import Avatars from "../components/ui/Avatars.astro";
 import Button from "../components/ui/Button.astro";
 import ButtonFlip from "../components/ui/ButtonFlip.astro";
+import videojs from "video.js";
 
 import { textData } from "../lib/text-data";
 
@@ -20,7 +21,16 @@ const { title, content, button, text } = Astro.props as HeroProps;
 <section class="hero-container">
 	<div class="hero-box-top">
 		<div class="top-content">
-			<video autoplay preload="auto" loop class="img-bg">
+			<video
+				id="video"
+				autoplay="true"
+				loop
+				class="img-bg"
+				preload="metadata"
+				muted
+				data-setup="{}"
+				src="/videos/video-about.mp4"
+			>
 				<source src="/videos/video-about.mp4" type="video/mp4" />
 			</video>
 			<!-- <img src={heroData.img} alt="pasuv stavby video" class="img-bg"> -->
@@ -118,7 +128,7 @@ const { title, content, button, text } = Astro.props as HeroProps;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		padding: 0;
+		padding: 0 1rem;
 		gap: 3rem;
 	}
 	.bottom-content {
@@ -133,7 +143,7 @@ const { title, content, button, text } = Astro.props as HeroProps;
 		width: 100%;
 		height: auto;
 		object-fit: cover;
-		margin-top: -1rem;
+		margin-top: -4rem;
 	}
 	@media screen and (min-width: 410px) {
 		.hero-container {
@@ -218,7 +228,7 @@ const { title, content, button, text } = Astro.props as HeroProps;
 			margin-top: -3rem;
 		}
 	}
-	@media screen and (min-width: 992px) {
+	@media screen and (min-width: 768px) {
 		.top-text {
 			padding: 2rem;
 			align-items: flex-start;
@@ -244,6 +254,14 @@ const { title, content, button, text } = Astro.props as HeroProps;
 			max-width: 800px;
 			width: 100%;
 		}
+		.bottom-content img {
+			max-width: 420px;
+			width: 100%;
+			flex: 1;
+			margin-top: -5rem;
+		}
+	}
+	@media screen and (min-width: 992px) {
 		.bottom-content img {
 			max-width: 420px;
 			width: 100%;
